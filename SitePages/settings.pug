@@ -5,16 +5,16 @@ append links
 
 block content
 	.section
-		h5.page-title settings
+		h5.page-title Ajustes
 	.section.profile-section
 		.card.container
 			.card-header
-				h5 personal details
-				p This section contains your basic profile information like name, email etc
+				h5 Detalles Personales
+				p Esta sección contiene tu información básica de perfil como nombre, email, etc.
 			.card-body
 				.sub-section.col-lg-10.col-md-12
 					.sub-section-title
-						h6 profile picture
+						h6 Foto de Perfil
 					.sub-section-body
 						.row
 							.col-lg-2.col-md-4
@@ -23,70 +23,69 @@ block content
 								.d-flex.mb-2
 									button.btn.btn-sm.btn-dark-red-f
 										i.las.la-upload
-										| upload new photo
+										| Subir nueva foto
 									button.btn.btn-sm.btn-darker-grey-o.ml-2
 										i.las.la-trash
-										| remove
-								p You can upload .jpg, .gif or .png image files
-								p max file size
+										| Eliminar
+								p Puedes subir archivos de imagen .jpg, .gif o .png
+								p Tamaño máximo del archivo
 									b  3mb
 				.sub-section.col-md-12.col-lg-8
 					.sub-section-title
-						h6 profile details
+						h6 Detalles del Perfil
 					.sub-section-body
 						.user-details-form
 							.form-row
 								.form-group.col-sm-6
-									label first name
-									input.form-control(value='jane')
+									label Nombre
+									input.form-control(value='Juana')
 								.form-group.col-sm-6
-									label last name
-									input.form-control(value='doe')
+									label Apellido
+									input.form-control(value='Pérez')
 								.form-group.col-sm-8.col-md-12.col-lg-8
-									label email address
+									label Dirección de Email
 									input.form-control(value='abc@def.com')
 								.form-group.col-sm-8.col-md-12.col-lg-8
-									label telephone number
+									label Número de Teléfono
 									input.form-control(value='+243989120' type='tel')
 							button.btn.btn-dark-red-f-gr.mt-4
 								i.las.la-save
-								| save changes
+								| Guardar Cambios
 		.card.container
 			.card-header
-				h5 password
-				p A secure password and updated recovery info help protect your account.
+				h5 Contraseña
+				p Una contraseña segura e información de recuperación actualizada ayudan a proteger tu cuenta.
 			.card-body
 				.sub-section.col-sm-8.col-md-12.col-lg-8
 					.sub-section-body
 						.user-password-form
 							.form-row
 								.form-group.col-sm-8
-									label current password
+									label Contraseña Actual
 									input.form-control(value='password' type='password')
 								.form-group.col-sm-8
-									label new password
+									label Nueva Contraseña
 									input.form-control(value='abc@def.com' type='password')
 								.form-group.col-sm-8
-									label re-type new password
+									label Re-escribe la Nueva Contraseña
 									input.form-control(value='abc@def.com' type='password')
 							button.btn.btn-dark-red-f-gr.mt-4
 								i.las.la-sync
-								| change my password
+								| Cambiar mi Contraseña
 		.card.container
 			.card-header
-				h5 newsletters and notifications
-				p Control newsletter subscriptions and email notifications
+				h5 Boletines y Notificaciones
+				p Controla las suscripciones a boletines y las notificaciones por email.
 			.card-body
 				.sub-section.col-sm-8.col-md-12.col-lg-6
 					.sub-section-body
 						.user-notifications-form
 							.custom-control.custom-switch
 								input#customSwitch1.custom-control-input(type='checkbox')
-								label.custom-control-label(for='customSwitch1') Subscribe to our monthly newsletter
+								label.custom-control-label(for='customSwitch1') Suscribirse a nuestro boletín mensual
 							.custom-control.custom-switch
 								input#customSwitch2.custom-control-input(type='checkbox' checked)
-								label.custom-control-label(for='customSwitch2') Enable custom notifications via email
+								label.custom-control-label(for='customSwitch2') Habilitar notificaciones personalizadas por email
 							button.btn.btn-dark-red-f-gr.mt-4
 								i.las.la-save
-								| save changes
-
+								| Guardar Cambios

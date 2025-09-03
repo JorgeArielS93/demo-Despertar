@@ -11,20 +11,20 @@ block content
 		.dropdowns-wrapper
 			.dropdown
 				a.btn.btn-dark-red-o.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-					| filter
+					| filtro
 				.dropdown-menu.shadow-lg(aria-labelledby='dropdownMenuLink')
-					a.dropdown-item(href='#') age
-					a.dropdown-item(href='#') diagnosis
+					a.dropdown-item(href='#') edad
+					a.dropdown-item(href='#') diagnostico
 					a.dropdown-item(href='#') triage
 			.dropdown
 				a.btn.btn-dark-red-o.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-					| sort by
+					| ordenar por
 				.dropdown-menu.shadow-lg(aria-labelledby='dropdownMenuLink')
-					a.dropdown-item(href='#') patient id
-					a.dropdown-item(href='#') patient name
-					a.dropdown-item(href='#') age
-					a.dropdown-item(href='#') date of birth
-					a.dropdown-item(href='#') diagnosis
+					a.dropdown-item(href='#') ID Paciente
+					a.dropdown-item(href='#') Nombre Paciente
+					a.dropdown-item(href='#') Edad
+					a.dropdown-item(href='#') Fecha de Nacimiento
+					a.dropdown-item(href='#') Diagnostico
 					a.dropdown-item(href='#') triage
 		.switch-view-btns
 			.btn-group.btn-group-toggle(data-toggle='buttons')
@@ -37,7 +37,7 @@ block content
 		.buttons-wrapper.ml-auto
 			button.btn.btn-dark-red-f-gr
 				i.las.la-plus-circle
-				| add a new patient
+				| Agregar Nuevo Paciente
 	.section.patients-card-view
 		.row
 			.col-md-3
@@ -46,17 +46,17 @@ block content
 						.card-img-top
 							img(src=assetsDirectory + '/images/people.svg' loading='lazy').rounded-circle
 							a(href='details.html').view-more
-								| view profile
+								| ver perfil
 					.card-body
 						.card-subsection-title
-							h5 john doe
-							p.text-muted patient-id: 2189178
+							h5 Leo Messi
+							p.text-muted Id paciente: 2189178
 						.card-subsection-body
-							label.text-muted age
+							label.text-muted edad
 							p 29
-							label.text-muted date of birth
+							label.text-muted fecha de nacimiento
 							p 21/12/1993
-							label.text-muted diagnosis
+							label.text-muted diagnostico
 							p urgent
 					.card-footer
 			.col-md-3
@@ -65,18 +65,18 @@ block content
 						.card-img-top
 							img(src=assetsDirectory + '/images/people.svg' loading='lazy').rounded-circle
 							a(href='details.html').view-more
-								| view profile
+								| ver perfil
 					.card-body
 						.card-subsection-title
-							h5 john doe
-							p.text-muted patient-id: 2189178
+							h5 Angel Di Maria
+							p.text-muted Id Paciente: 2189178
 						.card-subsection-body
-							label.text-muted age
+							label.text-muted edad
 							p 29
-							label.text-muted date of birth
+							label.text-muted fecha de nacimiento
 							p 21/12/1993
-							label.text-muted diagnosis
-							p non urgent
+							label.text-muted diagnostico
+							p -
 					.card-footer
 			.col-md-3
 				.card
@@ -84,18 +84,18 @@ block content
 						.card-img-top
 							img(src=assetsDirectory + '/images/people.svg' loading='lazy').rounded-circle
 							a(href='details.html').view-more
-								| view profile
+								| ver perfil
 					.card-body
 						.card-subsection-title
-							h5 john doe
-							p.text-muted patient-id: 2189178
+							h5 Leandro Paredes
+							p.text-muted id paciente: 2189178
 						.card-subsection-body
-							label.text-muted age
+							label.text-muted edad
 							p 29
-							label.text-muted date of birth
+							label.text-muted fecha de nacimiento
 							p 21/12/1993
-							label.text-muted diagnosis
-							p resuscitation
+							label.text-muted diagnostico
+							p autismo
 					.card-footer
 			.col-md-3
 				.card
@@ -103,18 +103,18 @@ block content
 						.card-img-top
 							img(src=assetsDirectory + '/images/people.svg' loading='lazy').rounded-circle
 							a(href='details.html').view-more
-								| view profile
+								| ver perfil
 					.card-body
 						.card-subsection-title
-							h5 john doe
-							p.text-muted patient-id: 2189178
+							h5 Julian Alvarez
+							p.text-muted Id paciente: 2189178
 						.card-subsection-body
-							label.text-muted age
+							label.text-muted edad
 							p 29
-							label.text-muted date of birth
+							label.text-muted fecha de nacimiento
 							p 21/12/1993
-							label.text-muted diagnosis
-							p emergency
+							label.text-muted diagnostico
+							p -
 					.card-footer
 			.col-md-3
 				.card
@@ -122,18 +122,18 @@ block content
 						.card-img-top
 							img(src=assetsDirectory + '/images/people.svg' loading='lazy').rounded-circle
 							a(href='details.html').view-more
-								| view profile
+								| ver perfil
 					.card-body
 						.card-subsection-title
-							h5 john doe
-							p.text-muted patient-id: 2189178
+							h5 Emiliano Martinez
+							p.text-muted Id paciente: 2189178
 						.card-subsection-body
-							label.text-muted age
+							label.text-muted edad
 							p 29
-							label.text-muted date of birth
+							label.text-muted fecha de nacimiento
 							p 21/12/1993
-							label.text-muted diagnosis
-							p urgent
+							label.text-muted diagnostico
+							p -
 					.card-footer
 			.col-md-3
 				.card
@@ -141,7 +141,7 @@ block content
 						.card-img-top
 							img(src=assetsDirectory + '/images/people.svg' loading='lazy').rounded-circle
 							a(href='details.html').view-more
-								| view profile
+								| ver perfil
 					.card-body
 						.card-subsection-title
 							h5 john doe
@@ -196,11 +196,11 @@ block content
 		table.table.table-hover.table-responsive-lg
 			thead
 				tr
-					th patient ID
-					th patient name
-					th age
-					th date of birth
-					th diagnosis
+					th Id Paciente
+					th Nombre Paciente
+					th Edad
+					th Fecha de Nacimiento
+					th diagnostico
 					th triage
 					th
 			tbody
@@ -211,12 +211,12 @@ block content
 						span.ml-2 john doe
 					td 29 yo
 					td 21/03/1992
-					td cancer
+					td Autisto
 					td
 						label.label-orange urgent
 					td
 						a(href='details.html').view-more.btn.btn-sm.btn-dark-red-f
-							| view profile
+							| ver perfil
 				tr
 					td 2189178
 					td
@@ -224,7 +224,7 @@ block content
 						span.ml-2 john doe
 					td 29 yo
 					td 21/03/1992
-					td cancer
+					td tourette 
 					td
 						label.label-green non urgent
 					td
@@ -237,12 +237,12 @@ block content
 						span.ml-2 john doe
 					td 29 yo
 					td 21/03/1992
-					td cancer
+					td tourette
 					td
-						label.label-blue resuscitation
+						label.label-blue -
 					td
 						a(href='details.html').view-more.btn.btn-sm.btn-dark-red-f
-							| view profile
+							| ver perfil
 				tr
 					td 2189178
 					td
@@ -250,12 +250,12 @@ block content
 						span.ml-2 john doe
 					td 29 yo
 					td 21/03/1992
-					td cancer
+					td autismo
 					td
 						label.label-pink emergency
 					td
 						a(href='details.html').view-more.btn.btn-sm.btn-dark-red-f
-							| view profile
+							| ver perfil
 				tr
 					td 2189178
 					td

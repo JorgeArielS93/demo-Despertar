@@ -18,8 +18,8 @@ block content
 					.card-body
 						.row
 							.col-md-6.welcome-text-wrapper.align-self-center
-								h5 hello, dr. john doe
-								p Welcome to your dashboard
+								h5 Hola, Dr. Ariel Saravia
+								p Bienvenido a tu dashboard
 							.col-md-6.welcome-img-wrapper
 								img(src='../SiteAssets/images/hello.svg')
 				.card.app-stats-card
@@ -27,17 +27,17 @@ block content
 						.row.text-center
 							.col-md-4
 								i.las.la-user-injured.la-3x.align-self-center
-								p total patients
+								p total pacientes
 								h4
 									a(href='') 2,301
 							.col-md-4
 								i.las.la-user-md.la-3x.align-self-center
-								p total doctors
+								p total doctores/as
 								h4
 									a(href='') 401
 							.col-md-4
 								i.las.la-clinic-medical.la-3x.align-self-center
-								p total clinics
+								p total clinicas
 								h4
 									a(href='') 21
 	.section.functionality-section
@@ -48,94 +48,94 @@ block content
 						.icon-wrapper
 							i.las.la-clinic-medical
 					.card-body
-						p add a clinic
+						p Añadir Clinicas
 				a(href='').card.text-center
 					.card-title
 						.icon-wrapper
 							i.las.la-user-md
 					.card-body
-						p add a specialist
+						p Agregar Especialista
 				a(href='').card.text-center
 					.card-title
 						.icon-wrapper
 							i.las.la-user-plus
 					.card-body
-						p add a user
+						p Agregar Usuarios
 				a(href='').card.text-center
 					.card-title
 						.icon-wrapper
 							i.las.la-user-lock
 					.card-body
-						p add an admin
+						p Agregar Admin
 				a(href='').card.text-center
 					.card-title
 						.icon-wrapper
 							i.las.la-plus-circle
 					.card-body
-						p add a staff
+						p Agregar Equipos
 	.section.card-summaries
 		.section-content
 			.card-deck
 				.card
 					.card-header
-						h5 recent activities
+						h5 Actividades Recientes
 					.card-body
 						canvas#recent-activity-chart
 				.card
 					.card-header
-						h5 total bookings
+						h5 Total de Reservas
 					.card-body
 						canvas#bookings-chart
 				.card
 					.card-header
-						h5 diseases summary
+						h5 Resumenes de Enfermedades 
 					.card-body
 						canvas#diseases-chart
 			.card-deck
 				.card
 					.card-header
-						h5 top treatments
+						h5 Mejores Tratamientos
 					.card-body
 						ol(type='1')
-							li consultation
-							li scaling
-							li root canal
-							li bleaching
-							li transplants
-							li cesarean
-							li x-rays
+							li Consultas
+							li Escalado
+							li -
+							li Blanqueamiento
+							li Transplantes
+							li Cesarias
+							li Rayos X
 					.card-footer
 						a(href='').view-more
-							| more
+							| mas..
 							i.las.la-angle-right
 				.card.total-counts-summary
 					.card-header
-						h5 total counts
+						h5 Totales
 					.card-body
 						.row.text-center.text-capitalize
 							.col-md-6
 								i.las.la-users.la-2x.mb-1
 								h4.mb-1 100
-								p total users
+								p total usuarios
 							.col-md-6
 								i.las.la-user-md.la-2x.mb-1
 								h4.mb-1 12
-								p total doctors
+								p total doctores
 							.col-md-6
 								i.las.la-user-injured.la-2x.mb-1
 								h4.mb-1 3210
-								p total patients
+								p total pacientes
 							.col-md-6
 								i.las.la-hospital.la-2x.mb-1
 								h4.mb-1 40
-								p total clinics
+								p total clinicas
 					.card-footer
 						a(href='').view-more
-							| more
+							| mas..
 							i.las.la-angle-right
 				.card
 					.card-header
-						h5 recent patients
+						h5 Pacientes Recientes
 					.card-body
 						table.table.table-hover.table-responsive-md.table-borderless
 							tbody
@@ -143,8 +143,8 @@ block content
 									td
 										img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
 									td
-										p john doe
-										small.text-muted dentist
+										p Juana Perez
+										small.text-muted Dentista
 									td
 										p.text-muted male
 									td
@@ -154,8 +154,8 @@ block content
 									td
 										img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
 									td
-										p john doe
-										small.text-muted dentist
+										p Juana Perez
+										small.text-muted Dentista
 									td
 										p.text-muted male
 									td
@@ -165,21 +165,21 @@ block content
 									td
 										img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
 									td
-										p john doe
-										small.text-muted dentist
+										p Juana Perez
+										small.text-muted Dentista
 									td
-										p.text-muted male
+										p.text-muted femenina
 									td
 										button.btn.btn-sm
 											i.las.la-ellipsis-h
 					.card-footer
 						a(href='').view-more
-							| more
+							| mas..
 							i.las.la-angle-right
 			.card-deck
 				.card
 					.card-header
-						h5 doctors lists
+						h5 Lista de Doctores
 					.card-body
 						table.table.table-borderless.table-hover.table-responsive-md
 							tbody
@@ -188,13 +188,13 @@ block content
 										img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
 									td
 										p john doe
-										small.text-muted dentist
+										small.text-muted dentista
 									td
 										p.text-muted male
 									td.text-right
 										p +271289178
 									td.text-right
-										button.btn.btn-dark-red-f.btn-sm appointment
+										button.btn.btn-dark-red-f.btn-sm cita
 									td
 										button.btn.btn-sm
 											i.las.la-ellipsis-h
@@ -202,14 +202,14 @@ block content
 									td
 										img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
 									td
-										p john doe
-										small.text-muted dentist
+										p Pepito Juarez
+										small.text-muted terapeuta
 									td
-										p.text-muted male
+										p.text-muted masculino
 									td.text-right
 										p +271289178
 									td.text-right
-										button.btn.btn-dark-red-f.btn-sm appointment
+										button.btn.btn-dark-red-f.btn-sm cita
 									td
 										button.btn.btn-sm
 											i.las.la-ellipsis-h
@@ -217,14 +217,14 @@ block content
 									td
 										img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
 									td
-										p john doe
-										small.text-muted dentist
+										p Maria Gomez
+										small.text-muted fonoaudiologa 
 									td
 										p.text-muted male
 									td.text-right
 										p +271289178
 									td.text-right
-										button.btn.btn-dark-red-f.btn-sm appointment
+										button.btn.btn-dark-red-f.btn-sm cita
 									td
 										button.btn.btn-sm
 											i.las.la-ellipsis-h
@@ -232,24 +232,24 @@ block content
 									td
 										img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
 									td
-										p john doe
-										small.text-muted dentist
+										p john Lopez
+										small.text-muted psicologo
 									td
 										p.text-muted male
 									td.text-right
 										p +271289178
 									td.text-right
-										button.btn.btn-dark-red-f.btn-sm appointment
+										button.btn.btn-dark-red-f.btn-sm cita
 									td
 										button.btn.btn-sm
 											i.las.la-ellipsis-h
 					.card-footer
 						a(href='').view-more
-							| more
+							| mas..
 							i.las.la-angle-right
 				.card
 					.card-header
-						h5 upcoming appointments
+						h5 Citas Pendientes
 					.card-body
 						table.table.table-borderless.table-hover.table-responsive-md
 							tbody
@@ -258,7 +258,7 @@ block content
 										img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
 									td
 										p john doe
-										small.text-muted dentist
+										small.text-muted dentista
 									td
 										p.text-muted male
 									td.text-right
@@ -275,8 +275,8 @@ block content
 									td
 										img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
 									td
-										p john doe
-										small.text-muted dentist
+										p maria Gomez
+										small.text-muted fonoaudiologa
 									td
 										p.text-muted male
 									td.text-right
@@ -293,8 +293,8 @@ block content
 									td
 										img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
 									td
-										p john doe
-										small.text-muted dentist
+										p Pepito Juarez
+										small.text-muted terapeuta 
 									td
 										p.text-muted male
 									td.text-right
@@ -311,8 +311,8 @@ block content
 									td
 										img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
 									td
-										p john doe
-										small.text-muted dentist
+										p john Lopez
+										small.text-muted psicologo
 									td
 										p.text-muted male
 									td.text-right
@@ -327,5 +327,5 @@ block content
 											i.las.la-ellipsis-h
 					.card-footer
 						a(href='').view-more
-							| more
+							| mas..
 							i.las.la-angle-right

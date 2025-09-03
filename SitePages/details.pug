@@ -9,12 +9,12 @@ block content
 			nav(aria-label='breadcrumb')
 				ol.breadcrumb
 					li.breadcrumb-item
-						a(href='patients.html') patients
-					li.breadcrumb-item.active(aria-current='page') john doe
+						a(href='patients.html') pacientes
+					li.breadcrumb-item.active(aria-current='page') Juan Pérez
 		.col-md-4
 			button.btn.btn-dark-red-f-gr
 				i.las.la-edit
-				| edit patient
+				| editar paciente
 	.section.patient-details-section
 		.row
 			.col-md-8
@@ -27,78 +27,78 @@ block content
 										.card-header
 											img.rounded-circle(src='https://placebeard.it/640x360' loading='lazy')
 										.card-body
-											h4 john doe
-											small.text-muted johndoe@abc.com
-											h5 age
+											h4 Juan Pérez
+											small.text-muted juanperez@abc.com
+											h5 edad
 											p 26
 										.card-footer
 											button.btn.btn-dark-red-f
 												i.las.la-sms
-												| send message
+												| enviar mensaje
 								.col-md-8.patients-details-card-wrapper
 									.mini-card
 										.card-body
 											.row
 												.col-md-4
 													.form-group
-														label gender
-														input.form-control(readonly value="male")
+														label género
+														input.form-control(readonly value="masculino")
 												.col-md-4
 													.form-group
-														label date of birth
+														label fecha de nacimiento
 														input.form-control(readonly value="27/10/1986")
 												.col-md-4
 													.form-group
-														label phone number
+														label número de teléfono
 														input.form-control(readonly value="(254) 727 4432")
 												.col-md-4
 													.form-group
-														label address
-														input.form-control(readonly value="75th, xy avenue")
+														label dirección
+														input.form-control(readonly value="Av. Corrientes 1234")
 												.col-md-4
 													.form-group
-														label city
-														input.form-control(readonly value="new york")
+														label ciudad
+														input.form-control(readonly value="Buenos Aires")
 												.col-md-4
 													.form-group
-														label zip code
+														label código postal
 														input.form-control(readonly value="21332")
 												.col-md-4
 													.form-group
-														label member status
-														input.form-control(readonly value="active")
+														label estado de miembro
+														input.form-control(readonly value="activo")
 												.col-md-4
 													.form-group
-														label registered date
+														label fecha de registro
 														input.form-control(readonly value="21/02/2018")
 					.col-sm-12
 						.card
 							.card-body
 								ul#myTab.nav.nav-tabs(role='tablist')
 									li.nav-item(role='presentation')
-										a#upcoming-appointments-tab.nav-link.active(data-toggle='tab', href='#upcoming-appointments', role='tab', aria-controls='upcoming-appointments', aria-selected='true') upcoming appointments
+										a#upcoming-appointments-tab.nav-link.active(data-toggle='tab', href='#upcoming-appointments', role='tab', aria-controls='upcoming-appointments', aria-selected='true') próximas citas
 									li.nav-item(role='presentation')
-										a#past-appointments-tab.nav-link(data-toggle='tab', href='#past-appointments', role='tab', aria-controls='past-appointments', aria-selected='false') past appointments
+										a#past-appointments-tab.nav-link(data-toggle='tab', href='#past-appointments', role='tab', aria-controls='past-appointments', aria-selected='false') citas pasadas
 									li.nav-item(role='presentation')
-										a#medical-records-tab.nav-link(data-toggle='tab', href='#medical-records', role='tab', aria-controls='medical-records', aria-selected='false') medical records
+										a#medical-records-tab.nav-link(data-toggle='tab', href='#medical-records', role='tab', aria-controls='medical-records', aria-selected='false') historia clínica
 								#myTabContent.tab-content
 									#upcoming-appointments.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='upcoming-appointments-tab')
 										.section-title
 											button.btn.btn-dark-red-f.btn-sm
 												i.las.la-calendar-plus
-												| create an appointment
+												| crear una cita
 										.media
 											.align-self-center
-												p tue
+												p mar
 												h3 05
 												p 2020
 											.media-body
 												.row
-													label.label-green-bl consultation
-													p with Dr. Jekyll
+													label.label-green-bl consulta
+													p con Dr. García
 													p
 														i.las.la-tv
-														| on zoom
+														| por zoom
 													p
 														i.las.la-clock
 														| 10.30 - 11.00
@@ -108,11 +108,11 @@ block content
 													a(href='')
 														i.las.la-ellipsis-v
 												.row
-													label.label-blue-bl root canal
-													p with Dr. Jekyll
+													label.label-blue-bl tratamiento de conducto
+													p con Dr. García
 													p
 														i.las.la-tv
-														| on zoom
+														| por zoom
 													p
 														i.las.la-clock
 														| 13.30 - 14.15
@@ -123,16 +123,16 @@ block content
 														i.las.la-ellipsis-v
 										.media
 											.align-self-center.mr-3
-												p wed
+												p mié
 												h3 06
 												p 2020
 											.media-body
 												.row
-													label.label-orange-bl consultation
-													p with Dr. Jekyll
+													label.label-orange-bl consulta
+													p con Dr. García
 													p
 														i.las.la-tv
-														| on zoom
+														| por zoom
 													p
 														i.las.la-clock
 														| 10.30 - 11.00
@@ -142,11 +142,11 @@ block content
 													a(href='')
 														i.las.la-ellipsis-v
 												.row
-													label.label-pink-bl root canal
-													p with Dr. Jekyll
+													label.label-pink-bl tratamiento de conducto
+													p con Dr. García
 													p
 														i.las.la-tv
-														| on zoom
+														| por zoom
 													p
 														i.las.la-clock
 														| 13.30 - 14.15
@@ -160,31 +160,31 @@ block content
 			.col-md-4
 				.card.notes-card
 					.card-header
-						h5 notes
-							button.btn.btn-dark-red-f.btn-sm see all
+						h5 notas
+							button.btn.btn-dark-red-f.btn-sm ver todo
 					.card-body
-						textarea.form-control(placeholder='you can write patient notes over here' rows='6')
+						textarea.form-control(placeholder='puedes escribir notas del paciente aquí' rows='6')
 						button.btn.btn-dark-red-f.float-right.btn-sm
 							i.las.la-save
-							| save note
+							| guardar nota
 					.card-footer
 						.float-left
 							p
 								i.las.la-user
-								| dr. jekyll
+								| dr. garcía
 						.float-right
 							p 04, may, 2020
 				.card.files-card
 					.card-header
-						h5 files
+						h5 archivos
 							button.btn.btn-dark-red-f.btn-sm
 								i.las.la-file-medical
-								| add file
+								| agregar archivo
 					.card-body
 						.list-group.list-group-flush
 							a(href="#").list-group-item
 								i.las.la-file-excel
-								| check up results.csv
+								| resultados_chequeo.csv
 								.float-right
 									small.text-muted 123kb
 									.action-buttons.no-display
@@ -194,7 +194,7 @@ block content
 											i.las.la-download
 							a(href="#").list-group-item
 								i.las.la-file-excel
-								| dental prescriptions.csv
+								| recetas_dentales.csv
 								.float-right
 									small.text-muted 3.5mb
 									.action-buttons.no-display
@@ -204,7 +204,7 @@ block content
 											i.las.la-download
 							a(href="#").list-group-item
 								i.las.la-file-pdf
-								| x-ray.pdf
+								| rayos_x.pdf
 								.float-right
 									small.text-muted 2.1mb
 									.action-buttons.no-display
@@ -214,7 +214,7 @@ block content
 											i.las.la-download
 							a(href="#").list-group-item
 								i.las.la-file-word
-								| consultancy-report.word
+								| informe_consulta.doc
 								.float-right
 									small.text-muted 2mb
 									.action-buttons.no-display
