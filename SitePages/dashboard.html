@@ -12,6 +12,7 @@
     <script src="../SiteAssets/js/vendors/bootstrap.bundle.min.js"></script>
     <script src="../SiteAssets/js/global.js"></script>
     <link rel="stylesheet" href="../SiteAssets/css/pages/dashboard.css"/>
+    <link rel="stylesheet" href="../SiteAssets/css/functionality-fix.css"/>
     <link rel="stylesheet" href="../SiteAssets/css/vendors/Chart.min.css"/>
     <script src="../SiteAssets/js/vendors/Chart.bundle.min.js"></script>
     <script src="../SiteAssets/js/dashboard.js"></script>
@@ -50,7 +51,7 @@
             <li class="nav-item">
               <div class="nav-link"><span class="vertical-divider"></span></div>
             </li>
-            <li class="nav-item"><a class="nav-link profile-dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle" src="../SiteAssets/images/person.jpg"/><span class="d">Ariel Saravia</span></a>
+            <li class="nav-item"><a class="nav-link profile-dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle" src="../SiteAssets/images/person.jpg"/><span class="d">Ines Saravia</span></a>
               <div class="dropdown">
                 <div class="dropdown-menu shadow-lg profile-dropdown-menu" aria-labelledby="profile-dropdown"><a class="dropdown-item" href="settings.html"><i class="las la-user mr-2"></i>perfil</a><a class="dropdown-item" href="settings.html"><i class="las la-cog mr-2"></i>ajustes</a></div>
               </div>
@@ -79,7 +80,7 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-6 welcome-text-wrapper align-self-center">
-                        <h5>Hola, Dr. Ariel Saravia</h5>
+                        <h5>Hola, Seño. Ines Saravia</h5>
                         <p>Bienvenido a tu dashboard</p>
                       </div>
                       <div class="col-md-6 welcome-img-wrapper"><img src="../SiteAssets/images/hello.svg"/></div>
@@ -90,15 +91,15 @@
                   <div class="card-body">
                     <div class="row text-center">
                       <div class="col-md-4"><i class="las la-user-injured la-3x align-self-center"></i>
-                        <p>total pacientes</p>
+                        <p>pacientes con discapacidades</p>
                         <h4><a href="">2,301</a></h4>
                       </div>
                       <div class="col-md-4"><i class="las la-user-md la-3x align-self-center"></i>
-                        <p>total doctores/as</p>
+                        <p>terapeutas especializados</p>
                         <h4><a href="">401</a></h4>
                       </div>
                       <div class="col-md-4"><i class="las la-clinic-medical la-3x align-self-center"></i>
-                        <p>total clinicas</p>
+                        <p>centros terapéuticos</p>
                         <h4><a href="">21</a></h4>
                       </div>
                     </div>
@@ -109,37 +110,40 @@
           </div>
           <div class="section functionality-section">
             <div class="section-content">
-              <div class="card-deck"><a class="card text-center" href="">
-                  <div class="card-title">
-                    <div class="icon-wrapper"><i class="las la-clinic-medical"></i></div>
-                  </div>
-                  <div class="card-body">
-                    <p>Añadir Clinicas</p>
-                  </div></a><a class="card text-center" href="">
+              <div class="card-deck">
+                <a class="card text-center" href="">
                   <div class="card-title">
                     <div class="icon-wrapper"><i class="las la-user-md"></i></div>
                   </div>
                   <div class="card-body">
-                    <p>Agregar Especialista</p>
-                  </div></a><a class="card text-center" href="">
+                    <p>Agregar Terapeuta</p>
+                  </div>
+                </a>
+                <a class="card text-center" href="agregar_paciente.html">
                   <div class="card-title">
-                    <div class="icon-wrapper"><i class="las la-user-plus"></i></div>
+                    <div class="icon-wrapper"><i class="las la-file-medical"></i></div>
                   </div>
                   <div class="card-body">
-                    <p>Agregar Usuarios</p>
-                  </div></a><a class="card text-center" href="">
+                    <p>Nueva Evaluación Terapéutica</p>
+                  </div>
+                </a>
+                <a class="card text-center" href="">
                   <div class="card-title">
                     <div class="icon-wrapper"><i class="las la-user-lock"></i></div>
                   </div>
                   <div class="card-body">
-                    <p>Agregar Admin</p>
-                  </div></a><a class="card text-center" href="">
+                    <p>Agregar Grupo</p>
+                  </div>
+                </a>
+                <a class="card text-center" href="">
                   <div class="card-title">
                     <div class="icon-wrapper"><i class="las la-plus-circle"></i></div>
                   </div>
                   <div class="card-body">
-                    <p>Agregar Equipos</p>
-                  </div></a></div>
+                    <p>Agregar Recursos</p>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
           <div class="section card-summaries">
@@ -147,7 +151,7 @@
               <div class="card-deck">
                 <div class="card">
                   <div class="card-header">
-                    <h5>Actividades Recientes</h5>
+                    <h5>Sesiones Terapéuticas</h5>
                   </div>
                   <div class="card-body">
                     <canvas id="recent-activity-chart"></canvas>
@@ -155,7 +159,7 @@
                 </div>
                 <div class="card">
                   <div class="card-header">
-                    <h5>Total de Reservas</h5>
+                    <h5>Citas por Especialidad</h5>
                   </div>
                   <div class="card-body">
                     <canvas id="bookings-chart"></canvas>
@@ -163,7 +167,7 @@
                 </div>
                 <div class="card">
                   <div class="card-header">
-                    <h5>Resumenes de Enfermedades </h5>
+                    <h5>Pacientes por Condición</h5>
                   </div>
                   <div class="card-body">
                     <canvas id="diseases-chart"></canvas>
@@ -173,17 +177,17 @@
               <div class="card-deck">
                 <div class="card">
                   <div class="card-header">
-                    <h5>Mejores Tratamientos</h5>
+                    <h5>Terapias Más Solicitadas</h5>
                   </div>
                   <div class="card-body">
                     <ol type="1">
-                      <li>Consultas</li>
-                      <li>Escalado</li>
-                      <li>-</li>
-                      <li>Blanqueamiento</li>
-                      <li>Transplantes</li>
-                      <li>Cesarias</li>
-                      <li>Rayos X</li>
+                      <li>Terapia del Lenguaje</li>
+                      <li>Terapia Ocupacional</li>
+                      <li>Terapia Conductual</li>
+                      <li>Estimulación Temprana</li>
+                      <li>Terapia Psicomotriz</li>
+                      <li>Apoyo Psicopedagógico</li>
+                      <li>Terapia Sensorial</li>
                     </ol>
                   </div>
                   <div class="card-footer"><a class="view-more" href="">mas..<i class="las la-angle-right"></i></a></div>
@@ -196,19 +200,19 @@
                     <div class="row text-center text-capitalize">
                       <div class="col-md-6"><i class="las la-users la-2x mb-1"></i>
                         <h4 class="mb-1">100</h4>
-                        <p>total usuarios</p>
+                        <p>familias atendidas</p>
                       </div>
                       <div class="col-md-6"><i class="las la-user-md la-2x mb-1"></i>
                         <h4 class="mb-1">12</h4>
-                        <p>total doctores</p>
+                        <p>terapeutas activos</p>
                       </div>
                       <div class="col-md-6"><i class="las la-user-injured la-2x mb-1"></i>
                         <h4 class="mb-1">3210</h4>
-                        <p>total pacientes</p>
+                        <p>pacientes atendidos</p>
                       </div>
                       <div class="col-md-6"><i class="las la-hospital la-2x mb-1"></i>
                         <h4 class="mb-1">40</h4>
-                        <p>total clinicas</p>
+                        <p>sesiones mensuales</p>
                       </div>
                     </div>
                   </div>
@@ -216,7 +220,7 @@
                 </div>
                 <div class="card">
                   <div class="card-header">
-                    <h5>Pacientes Recientes</h5>
+                    <h5>Evaluaciones Recientes</h5>
                   </div>
                   <div class="card-body">
                     <table class="table table-hover table-responsive-md table-borderless">
@@ -224,22 +228,10 @@
                         <tr>
                           <td><img class="rounded-circle" src="../SiteAssets/images/man.svg" loading="lazy"/></td>
                           <td>
-                            <p>Juana Perez</p><small class="text-muted">Dentista</small>
+                            <p>María González</p><small class="text-muted">TEA - 8 años</small>
                           </td>
                           <td>
-                            <p class="text-muted">male</p>
-                          </td>
-                          <td>
-                            <button class="btn btn-sm"><i class="las la-ellipsis-h"></i></button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><img class="rounded-circle" src="../SiteAssets/images/man.svg" loading="lazy"/></td>
-                          <td>
-                            <p>Juana Perez</p><small class="text-muted">Dentista</small>
-                          </td>
-                          <td>
-                            <p class="text-muted">male</p>
+                            <p class="text-muted">Femenino</p>
                           </td>
                           <td>
                             <button class="btn btn-sm"><i class="las la-ellipsis-h"></i></button>
@@ -248,10 +240,22 @@
                         <tr>
                           <td><img class="rounded-circle" src="../SiteAssets/images/man.svg" loading="lazy"/></td>
                           <td>
-                            <p>Juana Perez</p><small class="text-muted">Dentista</small>
+                            <p>Carlos Martínez</p><small class="text-muted">Síndrome Down - 12 años</small>
                           </td>
                           <td>
-                            <p class="text-muted">femenina</p>
+                            <p class="text-muted">Masculino</p>
+                          </td>
+                          <td>
+                            <button class="btn btn-sm"><i class="las la-ellipsis-h"></i></button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><img class="rounded-circle" src="../SiteAssets/images/man.svg" loading="lazy"/></td>
+                          <td>
+                            <p>Ana Rodríguez</p><small class="text-muted">TDAH - 6 años</small>
+                          </td>
+                          <td>
+                            <p class="text-muted">Femenino</p>
                           </td>
                           <td>
                             <button class="btn btn-sm"><i class="las la-ellipsis-h"></i></button>
@@ -266,7 +270,7 @@
               <div class="card-deck">
                 <div class="card">
                   <div class="card-header">
-                    <h5>Lista de Doctores</h5>
+                    <h5>Equipo Terapéutico</h5>
                   </div>
                   <div class="card-body">
                     <table class="table table-borderless table-hover table-responsive-md">
@@ -274,10 +278,10 @@
                         <tr>
                           <td><img class="rounded-circle" src="../SiteAssets/images/man.svg" loading="lazy"/></td>
                           <td>
-                            <p>john doe</p><small class="text-muted">dentista</small>
+                            <p>Laura Fernández</p><small class="text-muted">Terapeuta del Lenguaje</small>
                           </td>
                           <td>
-                            <p class="text-muted">male</p>
+                            <p class="text-muted">Femenino</p>
                           </td>
                           <td class="text-right">
                             <p>+271289178</p>
@@ -292,10 +296,10 @@
                         <tr>
                           <td><img class="rounded-circle" src="../SiteAssets/images/man.svg" loading="lazy"/></td>
                           <td>
-                            <p>Pepito Juarez</p><small class="text-muted">terapeuta</small>
+                            <p>Miguel Rodríguez</p><small class="text-muted">Terapeuta Ocupacional</small>
                           </td>
                           <td>
-                            <p class="text-muted">masculino</p>
+                            <p class="text-muted">Masculino</p>
                           </td>
                           <td class="text-right">
                             <p>+271289178</p>
@@ -310,10 +314,10 @@
                         <tr>
                           <td><img class="rounded-circle" src="../SiteAssets/images/man.svg" loading="lazy"/></td>
                           <td>
-                            <p>Maria Gomez</p><small class="text-muted">fonoaudiologa </small>
+                            <p>Andrea López</p><small class="text-muted">Psicóloga Especializada</small>
                           </td>
                           <td>
-                            <p class="text-muted">male</p>
+                            <p class="text-muted">Femenino</p>
                           </td>
                           <td class="text-right">
                             <p>+271289178</p>
@@ -328,10 +332,10 @@
                         <tr>
                           <td><img class="rounded-circle" src="../SiteAssets/images/man.svg" loading="lazy"/></td>
                           <td>
-                            <p>john Lopez</p><small class="text-muted">psicologo</small>
+                            <p>Carlos Mendoza</p><small class="text-muted">Fisioterapeuta</small>
                           </td>
                           <td>
-                            <p class="text-muted">male</p>
+                            <p class="text-muted">Masculino</p>
                           </td>
                           <td class="text-right">
                             <p>+271289178</p>
@@ -350,7 +354,7 @@
                 </div>
                 <div class="card">
                   <div class="card-header">
-                    <h5>Citas Pendientes</h5>
+                    <h5>Sesiones Programadas</h5>
                   </div>
                   <div class="card-body">
                     <table class="table table-borderless table-hover table-responsive-md">
@@ -358,32 +362,13 @@
                         <tr>
                           <td><img class="rounded-circle" src="../SiteAssets/images/man.svg" loading="lazy"/></td>
                           <td>
-                            <p>john doe</p><small class="text-muted">dentista</small>
+                            <p>María González</p><small class="text-muted">TEA - Terapia del Lenguaje</small>
                           </td>
                           <td>
-                            <p class="text-muted">male</p>
+                            <p class="text-muted">8 años</p>
                           </td>
                           <td class="text-right">
-                            <p>24y</p>
-                          </td>
-                          <td class="text-right">
-                            <button class="btn"><i class="las la-check-circle"></i></button>
-                            <button class="btn"><i class="las la-times-circle"></i></button>
-                          </td>
-                          <td>
-                            <button class="btn btn-sm"><i class="las la-ellipsis-h"></i></button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><img class="rounded-circle" src="../SiteAssets/images/man.svg" loading="lazy"/></td>
-                          <td>
-                            <p>maria Gomez</p><small class="text-muted">fonoaudiologa</small>
-                          </td>
-                          <td>
-                            <p class="text-muted">male</p>
-                          </td>
-                          <td class="text-right">
-                            <p>24y</p>
+                            <p>Hoy</p>
                           </td>
                           <td class="text-right">
                             <button class="btn"><i class="las la-check-circle"></i></button>
@@ -396,13 +381,32 @@
                         <tr>
                           <td><img class="rounded-circle" src="../SiteAssets/images/man.svg" loading="lazy"/></td>
                           <td>
-                            <p>Pepito Juarez</p><small class="text-muted">terapeuta </small>
+                            <p>Carlos Martínez</p><small class="text-muted">Síndrome Down - Terapia Ocupacional</small>
                           </td>
                           <td>
-                            <p class="text-muted">male</p>
+                            <p class="text-muted">12 años</p>
                           </td>
                           <td class="text-right">
-                            <p>24y</p>
+                            <p>Mañana</p>
+                          </td>
+                          <td class="text-right">
+                            <button class="btn"><i class="las la-check-circle"></i></button>
+                            <button class="btn"><i class="las la-times-circle"></i></button>
+                          </td>
+                          <td>
+                            <button class="btn btn-sm"><i class="las la-ellipsis-h"></i></button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><img class="rounded-circle" src="../SiteAssets/images/man.svg" loading="lazy"/></td>
+                          <td>
+                            <p>Ana Rodríguez</p><small class="text-muted">TDAH - Terapia Comportamental</small>
+                          </td>
+                          <td>
+                            <p class="text-muted">6 años</p>
+                          </td>
+                          <td class="text-right">
+                            <p>Viernes</p>
                           </td>
                           <td class="text-right">
                             <button class="btn"><i class="las la-check-circle"></i></button>

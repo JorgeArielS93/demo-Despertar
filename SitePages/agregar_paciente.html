@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrevista Inicial - Centro Pedagógico y Terapéutico Despertar</title>
+    <link rel="stylesheet" href="../SiteAssets/css/vendors/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../SiteAssets/css/vendors/line-awesome.min.css"/>
+    <link rel="stylesheet" href="../SiteAssets/css/pages/layout.css"/>
+    <link rel="stylesheet" href="../SiteAssets/css/pages/dashboard.css"/>
+    <link rel="icon" href="../SiteAssets/images/despertar.jpg"/>
+    <script src="../SiteAssets/js/vendors/jquery.min.js"></script>
+    <script src="../SiteAssets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="../SiteAssets/js/global.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg shadow-sm fixed-top">
+            <a class="navbar-brand" href="dashboard.html">
+                <img src="../SiteAssets/images/despertar.jpg" style="height: 40px; width: auto;"/>
+                <span>Despertar</span>
+            </a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <i class="las la-arrow-left"></i> Volver al Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="side-nav">
+            <ul class="list-group list-group-flush">
+                <a class="list-group-item" href="dashboard.html" data-toggle="tooltip" data-placement="bottom" title="Dashboard">
+                    <i class="las la-shapes la-lw"></i><span>dashboard</span>
+                </a>
+                <a class="list-group-item active" href="patients.html" data-toggle="tooltip" data-placement="bottom" title="Pacientes">
+                    <i class="las la-user-injured la-lw"></i><span>pacientes</span>
+                </a>
+                <a class="list-group-item" href="specialists.html" data-toggle="tooltip" data-placement="bottom" title="Especialistas">
+                    <i class="las la-clinic-medical la-lw"></i><span>especialistas</span>
+                </a>
+                <a class="list-group-item" href="procurement.html" data-toggle="tooltip" data-placement="bottom" title="Adquisiciones">
+                    <i class="las la-shopping-cart la-lw"></i><span>adquisiciones</span>
+                </a>
+                <a class="list-group-item" href="notifications.html" data-toggle="tooltip" data-placement="bottom" title="Notificaciones">
+                    <i class="las la-sms la-lw"></i><span>notificaciones</span>
+                </a>
+                <a class="list-group-item" href="settings.html" data-toggle="tooltip" data-placement="bottom" title="Ajustes">
+                    <i class="las la-cogs la-lw"></i><span>ajustes</span>
+                </a>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="section">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="las la-user-plus"></i> 
+                                        Entrevista Inicial
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <form id="entrevistaInicial">
+                                        
+                                        <!-- Información de la Entrevista -->
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h5 class="mb-0"><i class="las la-calendar"></i> Información de la Entrevista</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Fecha de Entrevista <span class="text-danger">*</span></label>
+                                                        <input type="date" class="form-control" name="fechaEntrevista" required>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Responsables <span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control" name="responsables" required placeholder="Profesional(es) que realizan la entrevista">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Datos del Paciente -->
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h5 class="mb-0"><i class="las la-user"></i> Datos del Paciente</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Nombre y Apellido <span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control" name="nombreApellido" required>
+                                                    </div>
+                                                    <div class="col-md-3 mb-3">
+                                                        <label class="form-label">Fecha de Nacimiento <span class="text-danger">*</span></label>
+                                                        <input type="date" class="form-control" name="fechaNacimiento" required>
+                                                    </div>
+                                                    <div class="col-md-3 mb-3">
+                                                        <label class="form-label">Edad</label>
+                                                        <input type="number" class="form-control" name="edad" readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3 mb-3">
+                                                        <label class="form-label">DNI</label>
+                                                        <input type="text" class="form-control" name="dni">
+                                                    </div>
+                                                    <div class="col-md-9 mb-3">
+                                                        <label class="form-label">Domicilio</label>
+                                                        <input type="text" class="form-control" name="domicilio">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3 mb-3">
+                                                        <label class="form-label">Certificado de Discapacidad</label>
+                                                        <select class="form-control" name="certificadoDiscapacidad">
+                                                            <option value="">Seleccionar</option>
+                                                            <option value="SI">SÍ</option>
+                                                            <option value="NO">NO</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-9 mb-3">
+                                                        <label class="form-label">Diagnóstico</label>
+                                                        <textarea class="form-control" name="diagnostico" rows="3" placeholder="Describe el diagnóstico médico..."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <label class="form-label">Obra Social</label>
+                                                        <input type="text" class="form-control" name="obraSocial">
+                                                    </div>
+                                                    <div class="col-md-3 mb-3">
+                                                        <label class="form-label">Nro de Afiliado</label>
+                                                        <input type="text" class="form-control" name="nroAfiliado">
+                                                    </div>
+                                                    <div class="col-md-5 mb-3">
+                                                        <label class="form-label">Escuela que Asiste</label>
+                                                        <input type="text" class="form-control" name="escuela">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Grado</label>
+                                                        <input type="text" class="form-control" name="grado">
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Turno</label>
+                                                        <select class="form-control" name="turno">
+                                                            <option value="">Seleccionar</option>
+                                                            <option value="Mañana">Mañana</option>
+                                                            <option value="Tarde">Tarde</option>
+                                                            <option value="Noche">Noche</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Datos de la Madre -->
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h5 class="mb-0"><i class="las la-female"></i> Datos de la Madre</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Nombre y Apellido</label>
+                                                        <input type="text" class="form-control" name="nombreMadre">
+                                                    </div>
+                                                    <div class="col-md-2 mb-3">
+                                                        <label class="form-label">Edad</label>
+                                                        <input type="number" class="form-control" name="edadMadre">
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <label class="form-label">Nro. de Teléfono</label>
+                                                        <input type="tel" class="form-control" name="telefonoMadre">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-3">
+                                                        <label class="form-label">Ocupación</label>
+                                                        <input type="text" class="form-control" name="ocupacionMadre">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Datos del Padre -->
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h5 class="mb-0"><i class="las la-male"></i> Datos del Padre</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Nombre y Apellido</label>
+                                                        <input type="text" class="form-control" name="nombrePadre">
+                                                    </div>
+                                                    <div class="col-md-2 mb-3">
+                                                        <label class="form-label">Edad</label>
+                                                        <input type="number" class="form-control" name="edadPadre">
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <label class="form-label">Nro. de Teléfono</label>
+                                                        <input type="tel" class="form-control" name="telefonoPadre">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-3">
+                                                        <label class="form-label">Ocupación</label>
+                                                        <input type="text" class="form-control" name="ocupacionPadre">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Motivo de Consulta -->
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h5 class="mb-0"><i class="las la-clipboard-list"></i> Motivo de Consulta</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="mb-3">
+                                                    <textarea class="form-control" name="motivoConsulta" rows="4" placeholder="Describe el motivo de la consulta..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Trayectoria Escolar -->
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h5 class="mb-0"><i class="las la-school"></i> Trayectoria Escolar</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="mb-3">
+                                                    <textarea class="form-control" name="trayectoriaEscolar" rows="4" placeholder="Describe la trayectoria educativa del paciente..."></textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Disponibilidad</label>
+                                                    <input type="text" class="form-control" name="disponibilidad" placeholder="Horarios disponibles para terapias...">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Antecedentes Clínicos -->
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h5 class="mb-0"><i class="las la-notes-medical"></i> Antecedentes Clínicos</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-3 mb-3">
+                                                        <label class="form-label">Enfermedades (Alergias)</label>
+                                                        <select class="form-control" name="tieneEnfermedades">
+                                                            <option value="">Seleccionar</option>
+                                                            <option value="SI">SÍ</option>
+                                                            <option value="NO">NO</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-9 mb-3">
+                                                        <label class="form-label">¿Cuáles?</label>
+                                                        <input type="text" class="form-control" name="cualesEnfermedades" placeholder="Especificar enfermedades o alergias...">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3 mb-3">
+                                                        <label class="form-label">Medicaciones</label>
+                                                        <select class="form-control" name="tieneMedicaciones">
+                                                            <option value="">Seleccionar</option>
+                                                            <option value="SI">SÍ</option>
+                                                            <option value="NO">NO</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-9 mb-3">
+                                                        <label class="form-label">Motivos</label>
+                                                        <input type="text" class="form-control" name="motivosMedicacion" placeholder="Motivos de la medicación...">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-3">
+                                                        <label class="form-label">¿Cuáles medicaciones?</label>
+                                                        <input type="text" class="form-control" name="cualesMedicaciones" placeholder="Nombre y dosis de medicamentos...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Hábitos de Autovalimiento -->
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h5 class="mb-0"><i class="las la-hands-helping"></i> Hábitos de Autovalimiento</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Alimentación</label>
+                                                    <textarea class="form-control" name="alimentacion" rows="3" placeholder="Describe los hábitos alimentarios..."></textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Higiene</label>
+                                                    <textarea class="form-control" name="higiene" rows="2" placeholder="Describe los hábitos de higiene..."></textarea>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <label class="form-label">Control de Esfínter</label>
+                                                        <input type="text" class="form-control" name="controlEsfinter" placeholder="Edad de control...">
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <label class="form-label">Diurno (en el día)</label>
+                                                        <input type="text" class="form-control" name="controlDiurno" placeholder="Control diurno...">
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <label class="form-label">Nocturno (en la noche)</label>
+                                                        <input type="text" class="form-control" name="controlNocturno" placeholder="Control nocturno...">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Vestimenta</label>
+                                                    <textarea class="form-control" name="vestimenta" rows="2" placeholder="Describe la autonomía para vestirse..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Aspecto Conductual -->
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h5 class="mb-0"><i class="las la-users"></i> Aspecto Conductual: Relaciones con Autoridad</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Con el Padre</label>
+                                                    <textarea class="form-control" name="relacionPadre" rows="2" placeholder="Describe la relación con el padre..."></textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Con la Madre</label>
+                                                    <textarea class="form-control" name="relacionMadre" rows="2" placeholder="Describe la relación con la madre..."></textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Manejo de Límites</label>
+                                                    <textarea class="form-control" name="manejoLimites" rows="2" placeholder="Describe el manejo de límites..."></textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Docentes/Terapeutas</label>
+                                                    <textarea class="form-control" name="relacionDocentes" rows="3" placeholder="Describe la relación con docentes y terapeutas..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Aspecto Cognitivo -->
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h5 class="mb-0"><i class="las la-brain"></i> Aspecto Cognitivo: Situación Educativa-Terapéutica</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <h6 class="text-primary mb-3">Dispositivos Básicos de Aprendizaje</h6>
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <label class="form-label">Motivación</label>
+                                                        <textarea class="form-control" name="motivacion" rows="2" placeholder="Describe la motivación..."></textarea>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <label class="form-label">Atención</label>
+                                                        <textarea class="form-control" name="atencion" rows="2" placeholder="Describe la capacidad de atención..."></textarea>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <label class="form-label">Memoria</label>
+                                                        <textarea class="form-control" name="memoria" rows="2" placeholder="Describe la capacidad de memoria..."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Tolerancia a la Frustración</label>
+                                                    <textarea class="form-control" name="toleranciaFrustracion" rows="2" placeholder="Describe la tolerancia a la frustración..."></textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Actividad Lúdica (Tipo de juego de su preferencia)</label>
+                                                    <textarea class="form-control" name="actividadLudica" rows="3" placeholder="Describe los tipos de juegos y actividades preferidas..."></textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Lateralidad</label>
+                                                    <input type="text" class="form-control" name="lateralidad" placeholder="Zurdo, diestro, ambidiestro...">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Aspecto Motor -->
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h5 class="mb-0"><i class="las la-running"></i> Aspecto Motor: Desarrollo Psicomotriz</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Control Cefálico (edad en que sostuvo la cabeza)</label>
+                                                        <input type="text" class="form-control" name="controlCefalico" placeholder="Ej: 3 meses">
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Sonrisa Social</label>
+                                                        <input type="text" class="form-control" name="sonrisaSocial" placeholder="Ej: 2 meses">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Sedestación (edad en que se sentó)</label>
+                                                        <input type="text" class="form-control" name="sedestacion" placeholder="Ej: 6 meses">
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Gateo</label>
+                                                        <input type="text" class="form-control" name="gateo" placeholder="Ej: 8 meses">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Bipedestación (edad en que se paró)</label>
+                                                        <input type="text" class="form-control" name="bipedestacion" placeholder="Ej: 10 meses">
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Marcha (edad que caminó)</label>
+                                                        <input type="text" class="form-control" name="marcha" placeholder="Ej: 12 meses">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Observaciones -->
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h5 class="mb-0"><i class="las la-clipboard"></i> Observaciones</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="mb-3">
+                                                    <textarea class="form-control" name="observaciones" rows="5" placeholder="Observaciones adicionales y notas importantes..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Botones -->
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <button type="submit" class="btn btn-dark-red-f btn-lg me-3">
+                                                    <i class="las la-save"></i> Guardar Entrevista
+                                                </button>
+                                                <button type="reset" class="btn btn-dark-red-o btn-lg me-3">
+                                                    <i class="las la-undo"></i> Limpiar Formulario
+                                                </button>
+                                                <a href="dashboard.html" class="btn btn-darker-grey-o btn-lg">
+                                                    <i class="las la-times"></i> Cancelar
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Función para cargar pacientes de ejemplo
+        function cargarPacientesEjemplo() {
+            const pacientesExistentes = JSON.parse(localStorage.getItem('pacientes') || '[]');
+            
+            // Solo cargar ejemplos si no hay pacientes existentes
+            if (pacientesExistentes.length === 0) {
+                const pacientesEjemplo = [
+                    {
+                        id: 1,
+                        nombreApellido: "María Elena González Pérez",
+                        dni: "1234567890",
+                        edad: 8,
+                        fechaNacimiento: "2016-03-15",
+                        diagnostico: "Trastorno del Espectro Autista (TEA)",
+                        motivoConsulta: "Dificultades en la comunicación y socialización. Presenta comportamientos repetitivos y necesita apoyo para desarrollar habilidades de interacción social.",
+                        nombreMadre: "Carmen Pérez",
+                        telefonoMadre: "301-234-5679",
+                        domicilio: "Calle 45 #23-12, Bogotá",
+                        observaciones: "Niña con gran potencial, responde bien a estímulos visuales y rutinas predecibles.",
+                        fechaRegistro: new Date(2024, 8, 1).toISOString(),
+                        tipoFicha: "entrevista_inicial"
+                    },
+                    {
+                        id: 2,
+                        nombreApellido: "Carlos Andrés Martínez López",
+                        dni: "2345678901",
+                        edad: 12,
+                        fechaNacimiento: "2012-07-20",
+                        diagnostico: "Síndrome de Down",
+                        motivoConsulta: "Apoyo en el desarrollo de habilidades académicas básicas y fortalecimiento de la independencia personal.",
+                        nombrePadre: "Pedro Martínez",
+                        telefonoPadre: "302-345-6780",
+                        domicilio: "Carrera 12 #67-89, Medellín",
+                        observaciones: "Adolescente muy carismático y cooperativo, con excelente disposición para aprender.",
+                        fechaRegistro: new Date(2024, 7, 15).toISOString(),
+                        tipoFicha: "entrevista_inicial"
+                    },
+                    {
+                        id: 3,
+                        nombreApellido: "Ana Sofía Rodríguez Castro",
+                        dni: "3456789012",
+                        edad: 6,
+                        fechaNacimiento: "2018-11-10",
+                        diagnostico: "TDAH (Trastorno por Déficit de Atención e Hiperactividad)",
+                        motivoConsulta: "Dificultades atencionales y de autorregulación que afectan el rendimiento escolar y las relaciones sociales.",
+                        nombreMadre: "Lucía Castro",
+                        telefonoMadre: "303-456-7891",
+                        domicilio: "Avenida 68 #45-23, Cali",
+                        observaciones: "Niña muy inteligente pero con dificultades significativas de atención y autorregulación emocional.",
+                        fechaRegistro: new Date(2024, 8, 10).toISOString(),
+                        tipoFicha: "entrevista_inicial"
+                    },
+                    {
+                        id: 4,
+                        nombreApellido: "Luis Fernando Herrera Jiménez",
+                        dni: "4567890123",
+                        edad: 15,
+                        fechaNacimiento: "2009-02-28",
+                        diagnostico: "Síndrome de Asperger",
+                        motivoConsulta: "Dificultades en la interacción social y adaptación a cambios. Presenta intereses muy específicos y rutinas rígidas.",
+                        nombrePadre: "Roberto Herrera",
+                        telefonoPadre: "304-567-8902",
+                        domicilio: "Calle 123 #45-67, Barranquilla",
+                        observaciones: "Adolescente con altas capacidades intelectuales, especialmente en matemáticas y ciencias.",
+                        fechaRegistro: new Date(2024, 7, 25).toISOString(),
+                        tipoFicha: "entrevista_inicial"
+                    },
+                    {
+                        id: 5,
+                        nombreApellido: "Isabella Torres Mendoza",
+                        dni: "5678901234",
+                        edad: 10,
+                        fechaNacimiento: "2014-09-05",
+                        diagnostico: "Discapacidad Intelectual Moderada",
+                        motivoConsulta: "Apoyo en el desarrollo de habilidades académicas básicas, autonomía personal y socialización con pares.",
+                        nombreMadre: "Sandra Mendoza",
+                        telefonoMadre: "305-678-9013",
+                        domicilio: "Transversal 34 #78-90, Bucaramanga",
+                        observaciones: "Niña muy dulce y cooperativa, con gran potencial cuando recibe el apoyo adecuado.",
+                        fechaRegistro: new Date(2024, 8, 20).toISOString(),
+                        tipoFicha: "entrevista_inicial"
+                    }
+                ];
+                
+                localStorage.setItem('pacientes', JSON.stringify(pacientesEjemplo));
+                console.log('Pacientes de ejemplo cargados exitosamente');
+            }
+        }
+
+        // Inicializar formulario
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cargar pacientes de ejemplo si no existen
+            cargarPacientesEjemplo();
+            
+            // Establecer fecha actual
+            document.querySelector('input[name="fechaEntrevista"]').value = new Date().toISOString().split('T')[0];
+            
+            // Calcular edad automáticamente
+            const fechaNacInput = document.querySelector('input[name="fechaNacimiento"]');
+            const edadInput = document.querySelector('input[name="edad"]');
+
+            if (fechaNacInput) {
+                fechaNacInput.addEventListener('change', function() {
+                    const fechaNac = new Date(this.value);
+                    const hoy = new Date();
+                    let edad = hoy.getFullYear() - fechaNac.getFullYear();
+                    const mes = hoy.getMonth() - fechaNac.getMonth();
+                    
+                    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
+                        edad--;
+                    }
+                    
+                    if (edad >= 0 && edadInput) {
+                        edadInput.value = edad;
+                    }
+                });
+            }
+
+            // Manejar envío del formulario
+            document.getElementById('entrevistaInicial').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const entrevistaData = {};
+                
+                // Procesar todos los campos del formulario
+                for (let [key, value] of formData.entries()) {
+                    entrevistaData[key] = value;
+                }
+                
+                // Agregar metadatos
+                entrevistaData.id = Date.now();
+                entrevistaData.fechaRegistro = new Date().toISOString();
+                entrevistaData.tipoFicha = 'entrevista_inicial';
+                
+                // Guardar en localStorage
+                let pacientes = JSON.parse(localStorage.getItem('pacientes') || '[]');
+                pacientes.push(entrevistaData);
+                localStorage.setItem('pacientes', JSON.stringify(pacientes));
+                
+                console.log('Entrevista inicial guardada:', entrevistaData);
+                
+                // Mostrar mensaje de éxito
+                alert('Entrevista inicial guardada exitosamente.\nPaciente: ' + entrevistaData.nombreApellido);
+                
+                // Redirigir al dashboard
+                window.location.href = 'dashboard.html';
+            });
+        });
+    </script>
+</body>
+</html>

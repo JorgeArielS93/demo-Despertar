@@ -12,6 +12,7 @@
     <script src="../SiteAssets/js/vendors/bootstrap.bundle.min.js"></script>
     <script src="../SiteAssets/js/global.js"></script>
     <link rel="stylesheet" href="../SiteAssets/css/pages/patients.css"/>
+    <link rel="stylesheet" href="../SiteAssets/css/centro-terapeutico.css"/>
     <script src="../SiteAssets/js/patients.js"></script>
   </head>
   <body>
@@ -48,7 +49,7 @@
             <li class="nav-item">
               <div class="nav-link"><span class="vertical-divider"></span></div>
             </li>
-            <li class="nav-item"><a class="nav-link profile-dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle" src="../SiteAssets/images/person.jpg"/><span class="d">Ariel Saravia</span></a>
+            <li class="nav-item"><a class="nav-link profile-dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle" src="../SiteAssets/images/person.jpg"/><span class="d">Ines Saravia</span></a>
               <div class="dropdown">
                 <div class="dropdown-menu shadow-lg profile-dropdown-menu" aria-labelledby="profile-dropdown"><a class="dropdown-item" href="settings.html"><i class="las la-user mr-2"></i>perfil</a><a class="dropdown-item" href="settings.html"><i class="las la-cog mr-2"></i>ajustes</a></div>
               </div>
@@ -69,357 +70,205 @@
           <div class="section filters-section">
             <div class="dropdowns-wrapper">
               <div class="dropdown"><a class="btn btn-dark-red-o dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">filtro</a>
-                <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#">edad</a><a class="dropdown-item" href="#">diagnostico</a><a class="dropdown-item" href="#">triage</a></div>
+                <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#">edad</a><a class="dropdown-item" href="#">diagnostico</a><a class="dropdown-item" href="#">nivel comunicación</a></div>
               </div>
               <div class="dropdown"><a class="btn btn-dark-red-o dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ordenar por</a>
-                <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#">ID Paciente</a><a class="dropdown-item" href="#">Nombre Paciente</a><a class="dropdown-item" href="#">Edad</a><a class="dropdown-item" href="#">Fecha de Nacimiento</a><a class="dropdown-item" href="#">Diagnostico</a><a class="dropdown-item" href="#">triage</a></div>
-              </div>
-            </div>
-            <div class="switch-view-btns">
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-darker-grey-o active">
-                  <input id="card-view-btn" type="radio" name="options" checked=""/><i class="las la-th-large"></i>
-                </label>
-                <label class="btn btn-darker-grey-o">
-                  <input id="table-view-btn" type="radio" name="options"/><i class="las la-list-ul"></i>
-                </label>
+                <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#">ID Paciente</a><a class="dropdown-item" href="#">Nombre Paciente</a><a class="dropdown-item" href="#">Edad</a><a class="dropdown-item" href="#">Fecha de Nacimiento</a><a class="dropdown-item" href="#">Diagnostico</a></div>
               </div>
             </div>
             <div class="buttons-wrapper ml-auto">
-              <button class="btn btn-dark-red-f-gr"><i class="las la-plus-circle"></i>Agregar Nuevo Paciente</button>
+              <a href="agregar_paciente.html" class="btn btn-dark-red-f-gr"><i class="las la-file-medical"></i>Nueva Evaluación Terapéutica</a>
+              <button class="btn btn-outline-secondary btn-sm ml-2" onclick="restablecerDatosEjemplo()" title="Restablecer datos de ejemplo">
+                <i class="las la-redo"></i> Restablecer Ejemplos
+              </button>
             </div>
           </div>
-          <div class="section patients-card-view">
-            <div class="row">
-              <div class="col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="card-img-top"><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><a class="view-more" href="details.html">ver perfil</a></div>
-                  </div>
-                  <div class="card-body">
-                    <div class="card-subsection-title">
-                      <h5>Leo Messi</h5>
-                      <p class="text-muted">Id paciente: 2189178</p>
-                    </div>
-                    <div class="card-subsection-body">
-                      <label class="text-muted">edad</label>
-                      <p>29</p>
-                      <label class="text-muted">fecha de nacimiento</label>
-                      <p>21/12/1993</p>
-                      <label class="text-muted">diagnostico</label>
-                      <p>urgent</p>
-                    </div>
-                  </div>
-                  <div class="card-footer"></div>
-                </div>
+          
+          <!-- Tabla de Pacientes -->
+          <div class="section patients-table-section">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="mb-0">Lista de Pacientes del Centro Terapéutico</h5>
               </div>
-              <div class="col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="card-img-top"><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><a class="view-more" href="details.html">ver perfil</a></div>
-                  </div>
-                  <div class="card-body">
-                    <div class="card-subsection-title">
-                      <h5>Angel Di Maria</h5>
-                      <p class="text-muted">Id Paciente: 2189178</p>
-                    </div>
-                    <div class="card-subsection-body">
-                      <label class="text-muted">edad</label>
-                      <p>29</p>
-                      <label class="text-muted">fecha de nacimiento</label>
-                      <p>21/12/1993</p>
-                      <label class="text-muted">diagnostico</label>
-                      <p>-</p>
-                    </div>
-                  </div>
-                  <div class="card-footer"></div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="card-img-top"><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><a class="view-more" href="details.html">ver perfil</a></div>
-                  </div>
-                  <div class="card-body">
-                    <div class="card-subsection-title">
-                      <h5>Leandro Paredes</h5>
-                      <p class="text-muted">id paciente: 2189178</p>
-                    </div>
-                    <div class="card-subsection-body">
-                      <label class="text-muted">edad</label>
-                      <p>29</p>
-                      <label class="text-muted">fecha de nacimiento</label>
-                      <p>21/12/1993</p>
-                      <label class="text-muted">diagnostico</label>
-                      <p>autismo</p>
-                    </div>
-                  </div>
-                  <div class="card-footer"></div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="card-img-top"><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><a class="view-more" href="details.html">ver perfil</a></div>
-                  </div>
-                  <div class="card-body">
-                    <div class="card-subsection-title">
-                      <h5>Julian Alvarez</h5>
-                      <p class="text-muted">Id paciente: 2189178</p>
-                    </div>
-                    <div class="card-subsection-body">
-                      <label class="text-muted">edad</label>
-                      <p>29</p>
-                      <label class="text-muted">fecha de nacimiento</label>
-                      <p>21/12/1993</p>
-                      <label class="text-muted">diagnostico</label>
-                      <p>-</p>
-                    </div>
-                  </div>
-                  <div class="card-footer"></div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="card-img-top"><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><a class="view-more" href="details.html">ver perfil</a></div>
-                  </div>
-                  <div class="card-body">
-                    <div class="card-subsection-title">
-                      <h5>Emiliano Martinez</h5>
-                      <p class="text-muted">Id paciente: 2189178</p>
-                    </div>
-                    <div class="card-subsection-body">
-                      <label class="text-muted">edad</label>
-                      <p>29</p>
-                      <label class="text-muted">fecha de nacimiento</label>
-                      <p>21/12/1993</p>
-                      <label class="text-muted">diagnostico</label>
-                      <p>-</p>
-                    </div>
-                  </div>
-                  <div class="card-footer"></div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="card-img-top"><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><a class="view-more" href="details.html">ver perfil</a></div>
-                  </div>
-                  <div class="card-body">
-                    <div class="card-subsection-title">
-                      <h5>john doe</h5>
-                      <p class="text-muted">patient-id: 2189178</p>
-                    </div>
-                    <div class="card-subsection-body">
-                      <label class="text-muted">age</label>
-                      <p>29</p>
-                      <label class="text-muted">date of birth</label>
-                      <p>21/12/1993</p>
-                      <label class="text-muted">diagnosis</label>
-                      <p>non urgent</p>
-                    </div>
-                  </div>
-                  <div class="card-footer"></div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="card-img-top"><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><a class="view-more" href="details.html">view profile</a></div>
-                  </div>
-                  <div class="card-body">
-                    <div class="card-subsection-title">
-                      <h5>john doe</h5>
-                      <p class="text-muted">patient-id: 2189178</p>
-                    </div>
-                    <div class="card-subsection-body">
-                      <label class="text-muted">age</label>
-                      <p>29</p>
-                      <label class="text-muted">date of birth</label>
-                      <p>21/12/1993</p>
-                      <label class="text-muted">diagnosis</label>
-                      <p>resuscitation</p>
-                    </div>
-                  </div>
-                  <div class="card-footer"></div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="card-img-top"><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><a class="view-more" href="details.html">view profile</a></div>
-                  </div>
-                  <div class="card-body">
-                    <div class="card-subsection-title">
-                      <h5>john doe</h5>
-                      <p class="text-muted">patient-id: 2189178</p>
-                    </div>
-                    <div class="card-subsection-body">
-                      <label class="text-muted">age</label>
-                      <p>29</p>
-                      <label class="text-muted">date of birth</label>
-                      <p>21/12/1993</p>
-                      <label class="text-muted">diagnosis</label>
-                      <p>emergency</p>
-                    </div>
-                  </div>
-                  <div class="card-footer"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section patients-table-view no-display">
-            <table class="table table-hover table-responsive-lg">
-              <thead>
-                <tr>
-                  <th>Id Paciente</th>
-                  <th>Nombre Paciente</th>
-                  <th>Edad</th>
-                  <th>Fecha de Nacimiento</th>
-                  <th>diagnostico</th>
-                  <th>triage</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2189178</td>
-                  <td><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><span class="ml-2">john doe</span></td>
-                  <td>29 yo</td>
-                  <td>21/03/1992</td>
-                  <td>Autismo en la niñez</td>
-                  <td>
-                    <label class="label-orange">urgent</label>
-                  </td>
-                  <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">ver perfil</a></td>
-                </tr>
-                <tr>
-                  <td>2189178</td>
-                  <td><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><span class="ml-2">john doe</span></td>
-                  <td>29 yo</td>
-                  <td>21/03/1992</td>
-                  <td>tourette </td>
-                  <td>
-                    <label class="label-green">non urgent</label>
-                  </td>
-                  <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">view profile</a></td>
-                </tr>
-                <tr>
-                  <td>2189178</td>
-                  <td><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><span class="ml-2">john doe</span></td>
-                  <td>29 yo</td>
-                  <td>21/03/1992</td>
-                  <td>Retraso Mental Leve</td>
-                  <td>
-                    <label class="label-blue">-</label>
-                  </td>
-                  <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">ver perfil</a></td>
-                </tr>
-                <tr>
-                  <td>2189178</td>
-                  <td><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><span class="ml-2">john doe</span></td>
-                  <td>29 yo</td>
-                  <td>21/03/1992</td>
-                  <td>Perturbación de la actividad y de la atención </td>
-                  <td>
-                    <label class="label-pink">emergency</label>
-                  </td>
-                  <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">ver perfil</a></td>
-                </tr>
-                <tr>
-                  <td>2189178</td>
-                  <td><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><span class="ml-2">john doe</span></td>
-                  <td>29 yo</td>
-                  <td>21/03/1992</td>
-                  <td>Otros trastornos del habla y del lenguaje </td>
-                  <td>
-                    <label class="label-orange">urgent</label>
-                  </td>
-                  <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">view profile</a></td>
-                </tr>
-                <tr>
-                  <td>2189178</td>
-                  <td><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><span class="ml-2">john doe</span></td>
-                  <td>29 yo</td>
-                  <td>21/03/1992</td>
-                  <td>Trastorno del desarrollo de las habilidades escolares </td>
-                  <td>
-                    <label class="label-green">non urgent</label>
-                  </td>
-                  <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">view profile</a></td>
-                </tr>
-                <tr>
-                  <td>2189178</td>
-                  <td><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><span class="ml-2">john doe</span></td>
-                  <td>29 yo</td>
-                  <td>21/03/1992</td>
-                  <td>Trastornos Hipercinetico, no especificado </td>
-                  <td>
-                    <label class="label-blue">resuscitation</label>
-                  </td>
-                  <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">view profile</a></td>
-                </tr>
-                <tr>
-                  <td>2189178</td>
-                  <td><img class="rounded-circle" src="../SiteAssets/images/people.svg" loading="lazy"/><span class="ml-2">john doe</span></td>
-                  <td>29 yo</td>
-                  <td>21/03/1992</td>
-                  <td>Trastornos Hipercinetico, no especificado </td>
-                  <td>
-                    <label class="label-pink">emergency</label>
-                  </td>
-                  <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">view profile</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal onboarding-modal" tabindex="=1">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Bienvenido</h5>
-                  <button class="close" type="button" data-dismiss="modal" aria-label="Close"><i class="las la-times-circle"></i></button>
-                </div>
-                <div class="modal-body">
-                  <div class="carousel slide" id="carouselExampleCaptions" data-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active"><img class="d-block" src="../SiteAssets/images/undraw_dashboard_nklg.svg" alt="..."/>
-                        <div class="carousel-caption d-md-block">
-                          <p>un <a href="" data-dismiss="modal">dashboard<i class="las la-external-link-alt"></i></a> intuitivo</p>
-                        </div>
-                      </div>
-                      <div class="carousel-item"><img class="d-block" src="../SiteAssets/images/undraw_medicine_b1ol.svg" alt="..."/>
-                        <div class="carousel-caption d-md-block">
-                          <p>acceso a <a href="specialists.html">especialistas<i class="las la-external-link-alt"></i></a></p>
-                        </div>
-                      </div>
-                      <div class="carousel-item"><img class="d-block" src="../SiteAssets/images/undraw_receipt_ecdd.svg" alt="..."/>
-                        <div class="carousel-caption d-md-block">
-                          <p>proceso simple de <a href="procurement.html">adquisiciones<i class="las la-external-link-alt"></i></a></p>
-                        </div>
-                      </div>
-                      <div class="carousel-item"><img class="d-block" src="../SiteAssets/images/undraw_new_notifications_fhvw.svg" alt="..."/>
-                        <div class="carousel-caption d-md-block">
-                          <p>centro de <a href="notifications.html">notificaciones<i class="las la-external-link-alt"></i></a> completo</p>
-                        </div>
-                      </div>
-                      <div class="carousel-item"><img class="d-block" src="../SiteAssets/images/undraw_Preferences_re_49in.svg" alt="..."/>
-                        <div class="carousel-caption d-md-block">
-                          <p>centro de <a href="settings.html">ajustes<i class="las la-external-link-alt"></i></a> minimalista</p>
-                        </div>
-                      </div>
-                    </div><a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev"><i class="las la-chevron-circle-left"></i><span class="sr-only">Anterior</span></a><a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next"><i class="las la-chevron-circle-right"></i><span class="sr-only">Siguiente</span></a>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr style="background-color: #f8f9fa;">
+                        <th>ID</th>
+                        <th>Paciente</th>
+                        <th>Edad</th>
+                        <th>Diagnóstico</th>
+                        <th>Nivel Comunicación</th>
+                        <th>Fecha Evaluación</th>
+                        <th style="width: 140px;">Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody id="pacientes-table-body">
+                      <!-- Los pacientes se cargarán dinámicamente aquí -->
+                    </tbody>
+                  </table>
+                  <div id="empty-state" class="text-center py-5" style="display: none;">
+                    <i class="las la-file-medical" style="font-size: 4rem; color: #a8001f; opacity: 0.3;"></i>
+                    <h5 class="mt-3">No hay pacientes registrados</h5>
+                    <p class="text-muted">Haga clic en "Nueva Evaluación Terapéutica" para realizar la primera evaluación</p>
+                    <a href="agregar_paciente.html" class="btn btn-dark-red-f">
+                      <i class="las la-file-medical"></i> Nueva Evaluación
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <footer>
-          <div class="page-footer text-center"></div>
-        </footer>
       </div>
-    </main>
+    </section>
+
+    <!-- Modal de confirmación de eliminación -->
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="border-bottom: 2px solid #a8001f;">
+            <h5 class="modal-title" id="deleteConfirmModalLabel" style="color: #333333;">
+              <i class="las la-exclamation-triangle" style="color: #dc3545;"></i> Confirmar Eliminación
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="background-color: #f9f9f9;">
+            <div class="text-center mb-3">
+              <i class="las la-user-injured" style="font-size: 3rem; color: #a8001f; opacity: 0.7;"></i>
+            </div>
+            <p style="color: #333333;">¿Está seguro que desea eliminar la ficha de evaluación del paciente <strong id="paciente-nombre" style="color: #a8001f;"></strong>?</p>
+            <div class="alert alert-warning" style="border-left: 4px solid #ffc107;">
+              <i class="las la-info-circle"></i> <strong>Advertencia:</strong> Esta acción eliminará permanentemente todos los datos de evaluación terapéutica y no se puede deshacer.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              <i class="las la-times"></i> Cancelar
+            </button>
+            <button type="button" class="btn btn-danger" id="confirm-delete-btn">
+              <i class="las la-trash"></i> Eliminar Paciente
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal de confirmación de eliminación -->
+    <div class="modal fade" id="editPacienteModal" tabindex="-1" role="dialog" aria-labelledby="editPacienteModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="border-bottom: 2px solid #a8001f;">
+            <h5 class="modal-title" id="editPacienteModalLabel" style="color: #333333;">
+              <i class="las la-edit" style="color: #a8001f;"></i> Editar Información del Paciente
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="background-color: #f9f9f9;">
+            <form id="editPacienteForm">
+              <input type="hidden" id="edit-paciente-id">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="edit-nombres" style="color: #333333; font-weight: 600;">Nombres</label>
+                    <input type="text" class="form-control" id="edit-nombres" required style="border: 1px solid #ddd;">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="edit-apellidos" style="color: #333333; font-weight: 600;">Apellidos</label>
+                    <input type="text" class="form-control" id="edit-apellidos" required style="border: 1px solid #ddd;">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="edit-documento" style="color: #333333; font-weight: 600;">Documento</label>
+                    <input type="text" class="form-control" id="edit-documento" style="border: 1px solid #ddd;">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="edit-edad" style="color: #333333; font-weight: 600;">Edad</label>
+                    <input type="number" class="form-control" id="edit-edad" style="border: 1px solid #ddd;">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="edit-sexo" style="color: #333333; font-weight: 600;">Sexo</label>
+                    <select class="form-control" id="edit-sexo" style="border: 1px solid #ddd;">
+                      <option value="">Seleccionar</option>
+                      <option value="M">Masculino</option>
+                      <option value="F">Femenino</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="edit-telefono" style="color: #333333; font-weight: 600;">Teléfono</label>
+                    <input type="tel" class="form-control" id="edit-telefono" style="border: 1px solid #ddd;">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="edit-diagnostico" style="color: #333333; font-weight: 600;">Diagnóstico Principal</label>
+                    <select class="form-control" id="edit-diagnostico" style="border: 1px solid #ddd;">
+                      <option value="">Seleccionar</option>
+                      <option value="Trastorno del Espectro Autista (TEA)">Trastorno del Espectro Autista (TEA)</option>
+                      <option value="Síndrome de Down">Síndrome de Down</option>
+                      <option value="Discapacidad Intelectual">Discapacidad Intelectual</option>
+                      <option value="Trastorno del Desarrollo">Trastorno del Desarrollo</option>
+                      <option value="Síndrome de Asperger">Síndrome de Asperger</option>
+                      <option value="TDAH">TDAH</option>
+                      <option value="Parálisis Cerebral">Parálisis Cerebral</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="edit-comunicacion" style="color: #333333; font-weight: 600;">Nivel de Comunicación</label>
+                    <select class="form-control" id="edit-comunicacion" style="border: 1px solid #ddd;">
+                      <option value="">Seleccionar</option>
+                      <option value="No verbal">No verbal</option>
+                      <option value="Palabras aisladas">Palabras aisladas</option>
+                      <option value="Frases simples">Frases simples</option>
+                      <option value="Conversación básica">Conversación básica</option>
+                      <option value="Comunicación fluida">Comunicación fluida</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="edit-motivo" style="color: #333333; font-weight: 600;">Motivo de Consulta</label>
+                    <textarea class="form-control" id="edit-motivo" rows="2" style="border: 1px solid #ddd;"></textarea>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              <i class="las la-times"></i> Cancelar
+            </button>
+            <button type="button" class="btn btn-dark-red-f" id="save-edit-btn">
+              <i class="las la-save"></i> Guardar Cambios
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../SiteAssets/js/pacientes-manager.js"></script>
   </body>
 </html>

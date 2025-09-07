@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../SiteAssets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../SiteAssets/css/main.css">
+    <link rel="stylesheet" href="../SiteAssets/css/all.css">
+    <link rel="stylesheet" href="../SiteAssets/css/centro-terapeutico.css">
+    <script src="../SiteAssets/js/vendors/jquery.min.js"></script>
+    <script src="../SiteAssets/js/vendors/bootstrap.min.js"></script>
+    <title>Detalle del Paciente - Centro Terapéutico</title>
+  </head>
+  <body>
+    <main>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <a class="navbar-brand" href="../SitePages/dashboard.html">
+            <img src="../SiteAssets/images/qafya-logo.png" width="30" alt="Logo">
+            Centro Terapéutico
+          </a>
+          <div class="navbar-nav ml-auto">
+            <a class="nav-link" href="patients.html">
+              <i class="las la-arrow-left"></i> Volver a Pacientes
+            </a>
+          </div>
+        </nav>
+        
+        <div class="container-fluid mt-4">
+          <!-- Header del paciente -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header" style="background-color: #a8001f; color: white;">
+                  <div class="row align-items-center">
+                    <div class="col-md-8">
+                      <h4 class="mb-0">
+                        <i class="las la-user-md"></i> 
+                        <span id="paciente-nombre">Información del Paciente</span>
+                      </h4>
+                    </div>
+                    <div class="col-md-4 text-right">
+                      <button class="btn btn-light btn-sm" onclick="window.print()">
+                        <i class="las la-print"></i> Imprimir
+                      </button>
+                      <button class="btn btn-warning btn-sm" onclick="editarPacienteDesdeDetalle()">
+                        <i class="las la-edit"></i> Editar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-3 text-center">
+                      <img id="paciente-foto" src="../SiteAssets/images/people.svg" class="rounded-circle" style="width: 120px; height: 120px;">
+                    </div>
+                    <div class="col-md-9">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6 style="color: #a8001f; font-weight: 600;">Información Personal</h6>
+                          <p><strong>Nombres:</strong> <span id="detail-nombres"></span></p>
+                          <p><strong>Apellidos:</strong> <span id="detail-apellidos"></span></p>
+                          <p><strong>Documento:</strong> <span id="detail-documento"></span></p>
+                          <p><strong>Edad:</strong> <span id="detail-edad"></span></p>
+                          <p><strong>Sexo:</strong> <span id="detail-sexo"></span></p>
+                        </div>
+                        <div class="col-md-6">
+                          <h6 style="color: #a8001f; font-weight: 600;">Información de Contacto</h6>
+                          <p><strong>Teléfono:</strong> <span id="detail-telefono"></span></p>
+                          <p><strong>Fecha de Nacimiento:</strong> <span id="detail-fecha-nacimiento"></span></p>
+                          <p><strong>Fecha de Evaluación:</strong> <span id="detail-fecha-evaluacion"></span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Información Clínica -->
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <div class="card h-100">
+                <div class="card-header" style="background-color: #f8f9fa; border-bottom: 2px solid #a8001f;">
+                  <h5 class="mb-0" style="color: #333;">
+                    <i class="las la-stethoscope" style="color: #a8001f;"></i> Información Clínica
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <div class="mb-3">
+                    <label class="font-weight-bold" style="color: #555;">Diagnóstico Principal:</label>
+                    <p id="detail-diagnostico" class="badge badge-primary p-2"></p>
+                  </div>
+                  <div class="mb-3">
+                    <label class="font-weight-bold" style="color: #555;">Nivel de Comunicación:</label>
+                    <p id="detail-comunicacion"></p>
+                  </div>
+                  <div class="mb-3">
+                    <label class="font-weight-bold" style="color: #555;">Motivo de Consulta:</label>
+                    <p id="detail-motivo"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="card h-100">
+                <div class="card-header" style="background-color: #f8f9fa; border-bottom: 2px solid #a8001f;">
+                  <h5 class="mb-0" style="color: #333;">
+                    <i class="las la-family" style="color: #a8001f;"></i> Información Familiar
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <div class="mb-3">
+                    <label class="font-weight-bold" style="color: #555;">Acudiente Responsable:</label>
+                    <p id="detail-acudiente"></p>
+                  </div>
+                  <div class="mb-3">
+                    <label class="font-weight-bold" style="color: #555;">Teléfono del Acudiente:</label>
+                    <p id="detail-telefono-acudiente"></p>
+                  </div>
+                  <div class="mb-3">
+                    <label class="font-weight-bold" style="color: #555;">Dirección:</label>
+                    <p id="detail-direccion"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Desarrollo y Habilidades -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header" style="background-color: #f8f9fa; border-bottom: 2px solid #a8001f;">
+                  <h5 class="mb-0" style="color: #333;">
+                    <i class="las la-brain" style="color: #a8001f;"></i> Evaluación del Desarrollo
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <h6 style="color: #a8001f;">Desarrollo Motor</h6>
+                      <p><strong>Motor Grueso:</strong> <span id="detail-motor-grueso"></span></p>
+                      <p><strong>Motor Fino:</strong> <span id="detail-motor-fino"></span></p>
+                    </div>
+                    <div class="col-md-4">
+                      <h6 style="color: #a8001f;">Desarrollo Cognitivo</h6>
+                      <p><strong>Nivel Cognitivo:</strong> <span id="detail-nivel-cognitivo"></span></p>
+                      <p><strong>Atención:</strong> <span id="detail-atencion"></span></p>
+                    </div>
+                    <div class="col-md-4">
+                      <h6 style="color: #a8001f;">Desarrollo Social</h6>
+                      <p><strong>Habilidades Sociales:</strong> <span id="detail-habilidades-sociales"></span></p>
+                      <p><strong>Adaptación:</strong> <span id="detail-adaptacion"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Observaciones y Recomendaciones -->
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <div class="card h-100">
+                <div class="card-header" style="background-color: #f8f9fa; border-bottom: 2px solid #a8001f;">
+                  <h5 class="mb-0" style="color: #333;">
+                    <i class="las la-eye" style="color: #a8001f;"></i> Observaciones
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <p id="detail-observaciones">No hay observaciones registradas.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="card h-100">
+                <div class="card-header" style="background-color: #f8f9fa; border-bottom: 2px solid #a8001f;">
+                  <h5 class="mb-0" style="color: #333;">
+                    <i class="las la-lightbulb" style="color: #a8001f;"></i> Recomendaciones
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <p id="detail-recomendaciones">No hay recomendaciones registradas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Historial de Modificaciones -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header" style="background-color: #f8f9fa; border-bottom: 2px solid #a8001f;">
+                  <h5 class="mb-0" style="color: #333;">
+                    <i class="las la-history" style="color: #a8001f;"></i> Historial de la Evaluación
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <div class="timeline">
+                    <div class="timeline-item">
+                      <div class="timeline-marker bg-primary"></div>
+                      <div class="timeline-content">
+                        <h6 class="timeline-title">Evaluación Inicial</h6>
+                        <p class="timeline-description">Fecha: <span id="detail-fecha-registro"></span></p>
+                      </div>
+                    </div>
+                    <div id="timeline-modificaciones">
+                      <!-- Las modificaciones se cargarán aquí dinámicamente -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          cargarDetallePaciente();
+      });
+      
+      function cargarDetallePaciente() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const pacienteId = urlParams.get('id');
+          
+          if (!pacienteId) {
+              alert('No se especificó el ID del paciente');
+              window.location.href = 'patients.html';
+              return;
+          }
+          
+          const pacientes = JSON.parse(localStorage.getItem('pacientes') || '[]');
+          const paciente = pacientes.find(p => p.id == pacienteId);
+          
+          if (!paciente) {
+              alert('Paciente no encontrado');
+              window.location.href = 'patients.html';
+              return;
+          }
+          
+          // Llenar información básica
+          document.getElementById('paciente-nombre').textContent = `${paciente.nombres} ${paciente.apellidos}`;
+          document.getElementById('detail-nombres').textContent = paciente.nombres || 'No especificado';
+          document.getElementById('detail-apellidos').textContent = paciente.apellidos || 'No especificado';
+          document.getElementById('detail-documento').textContent = paciente.documento || 'No especificado';
+          document.getElementById('detail-edad').textContent = `${paciente.edad || 'No especificado'} años`;
+          document.getElementById('detail-sexo').textContent = paciente.sexo === 'M' ? 'Masculino' : paciente.sexo === 'F' ? 'Femenino' : 'No especificado';
+          document.getElementById('detail-telefono').textContent = paciente.telefono || 'No especificado';
+          
+          // Fechas
+          if (paciente.fechaNacimiento) {
+              document.getElementById('detail-fecha-nacimiento').textContent = new Date(paciente.fechaNacimiento).toLocaleDateString();
+          } else {
+              document.getElementById('detail-fecha-nacimiento').textContent = 'No especificada';
+          }
+          
+          if (paciente.fechaRegistro) {
+              document.getElementById('detail-fecha-evaluacion').textContent = new Date(paciente.fechaRegistro).toLocaleDateString();
+              document.getElementById('detail-fecha-registro').textContent = new Date(paciente.fechaRegistro).toLocaleString();
+          }
+          
+          // Información clínica
+          document.getElementById('detail-diagnostico').textContent = paciente.diagnosticoPrincipal || 'Sin diagnóstico';
+          document.getElementById('detail-comunicacion').textContent = paciente.nivelComunicacion || 'No evaluado';
+          document.getElementById('detail-motivo').textContent = paciente.motivoConsulta || 'No especificado';
+          
+          // Información familiar
+          document.getElementById('detail-acudiente').textContent = paciente.nombreAcudiente || 'No especificado';
+          document.getElementById('detail-telefono-acudiente').textContent = paciente.telefonoAcudiente || 'No especificado';
+          document.getElementById('detail-direccion').textContent = paciente.direccion || 'No especificada';
+          
+          // Desarrollo
+          document.getElementById('detail-motor-grueso').textContent = paciente.desarrolloMotorGrueso || 'No evaluado';
+          document.getElementById('detail-motor-fino').textContent = paciente.desarrolloMotorFino || 'No evaluado';
+          document.getElementById('detail-nivel-cognitivo').textContent = paciente.nivelCognitivo || 'No evaluado';
+          document.getElementById('detail-atencion').textContent = paciente.nivelAtencion || 'No evaluado';
+          document.getElementById('detail-habilidades-sociales').textContent = paciente.habilidadesSociales || 'No evaluado';
+          document.getElementById('detail-adaptacion').textContent = paciente.nivelAdaptacion || 'No evaluado';
+          
+          // Observaciones y recomendaciones
+          document.getElementById('detail-observaciones').textContent = paciente.observaciones || 'No hay observaciones registradas.';
+          document.getElementById('detail-recomendaciones').textContent = paciente.recomendaciones || 'No hay recomendaciones registradas.';
+          
+          // Timeline de modificaciones
+          const timelineContainer = document.getElementById('timeline-modificaciones');
+          if (paciente.fechaModificacion) {
+              timelineContainer.innerHTML = `
+                  <div class="timeline-item">
+                      <div class="timeline-marker bg-warning"></div>
+                      <div class="timeline-content">
+                          <h6 class="timeline-title">Última Modificación</h6>
+                          <p class="timeline-description">Fecha: ${new Date(paciente.fechaModificacion).toLocaleString()}</p>
+                      </div>
+                  </div>
+              `;
+          }
+      }
+      
+      function editarPacienteDesdeDetalle() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const pacienteId = urlParams.get('id');
+          window.location.href = `patients.html?edit=${pacienteId}`;
+      }
+    </script>
+  </body>
+</html>

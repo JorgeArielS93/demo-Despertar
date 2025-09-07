@@ -16,67 +16,99 @@ function initCharts() {
 	var recentActivitesChart = new Chart(ctx3, {
 		type: 'line',
 		data: {
-			labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+			labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago'],
 			datasets: [{
-				label: '# of patients',
-				data: [12, 19, 3, 5, 1, 2, 4, 15],
-				backgroundColor: [
-					'rgba(255, 99, 132, 0.7)',
-					'rgba(54, 162, 235, 0.7)',
-					'rgba(255, 206, 86, 0.7)',
-					'rgba(75, 192, 192, 0.7)',
-				],
+				label: 'Sesiones Terapéuticas',
+				data: [45, 52, 38, 61, 47, 55, 49, 58],
+				backgroundColor: 'rgba(168, 0, 31, 0.1)',
+				borderColor: 'rgba(168, 0, 31, 1)',
+				borderWidth: 2,
+				fill: true
 			}],
 		},
 		options: {
 			legend: {
 				display: true,
 				position: 'bottom',
+			},
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true
+					}
+				}]
 			}
 		},
-	})
+	});
+
 	var bookingsChart = new Chart(ctx, {
 		type: 'doughnut',
 		data: {
-			labels: ['urgent', 'no urgent', 'resuscitation', 'emergency'],
+			labels: ['Terapia Ocupacional', 'Fonoaudiología', 'Fisioterapia', 'Psicología'],
 			datasets: [{
-				label: '# of Votes',
-				data: [12, 19, 3, 5],
+				label: 'Citas por Especialidad',
+				data: [28, 22, 18, 32],
 				backgroundColor: [
-					'rgba(255, 206, 86, 0.7)',
-					'rgba(75, 192, 192, 0.7)',
-					'rgba(54, 162, 235, 0.7)',
-					'rgba(255, 99, 132, 0.7)',
+					'rgba(168, 0, 31, 0.8)',
+					'rgba(46, 125, 50, 0.8)',
+					'rgba(33, 150, 243, 0.8)',
+					'rgba(255, 152, 0, 0.8)',
 				],
+				borderWidth: 2,
+				borderColor: '#ffffff'
 			}],
 		},
 		options: {
 			legend: {
 				display: true,
 				position: 'bottom',
+			},
+			tooltips: {
+				callbacks: {
+					label: function(tooltipItem, data) {
+						var label = data.labels[tooltipItem.index];
+						var value = data.datasets[0].data[tooltipItem.index];
+						return label + ': ' + value + ' citas';
+					}
+				}
 			}
 		},
-	})
+	});
+
 	var diseasesChart = new Chart(ctx2, {
 		type: 'doughnut',
 		data: {
-			labels: ['malaria', 'tuberculosis', 'pneumonia', 'diabetes'],
+			labels: ['Trastorno del Espectro Autista', 'Síndrome de Down', 'TDAH', 'Discapacidad Intelectual', 'Trastorno del Lenguaje'],
 			datasets: [{
-				label: '# of Votes',
-				data: [13, 1, 8, 15],
+				label: 'Pacientes por Condición',
+				data: [18, 12, 15, 8, 10],
 				backgroundColor: [
-					'rgba(255, 206, 86, 0.7)',
-					'rgba(75, 192, 192, 0.7)',
-					'rgba(54, 162, 235, 0.7)',
-					'rgba(255, 99, 132, 0.7)',
+					'rgba(168, 0, 31, 0.8)',
+					'rgba(46, 125, 50, 0.8)',
+					'rgba(33, 150, 243, 0.8)',
+					'rgba(255, 152, 0, 0.8)',
+					'rgba(156, 39, 176, 0.8)',
 				],
+				borderWidth: 2,
+				borderColor: '#ffffff'
 			}],
 		},
 		options: {
 			legend: {
 				display: true,
 				position: 'bottom',
+			},
+			tooltips: {
+				callbacks: {
+					label: function(tooltipItem, data) {
+						var label = data.labels[tooltipItem.index];
+						var value = data.datasets[0].data[tooltipItem.index];
+						var total = data.datasets[0].data.reduce((a, b) => a + b, 0);
+						var percentage = Math.round((value / total) * 100);
+						return label + ': ' + value + ' pacientes (' + percentage + '%)';
+					}
+				}
 			}
 		},
-	})
+	});
 }
