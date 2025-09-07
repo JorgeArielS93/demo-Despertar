@@ -1,0 +1,54 @@
+/* Fix para los botones de funcionalidad - Mantener tamaño consistente */
+
+/* Establecer altura fija para todas las tarjetas de funcionalidad */
+main .main-content .functionality-section .section-content .card {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Establecer altura fija para el card-body */
+main .main-content .functionality-section .section-content .card .card-body {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 0;
+}
+
+/* Asegurar que el texto no cause cambios de altura */
+main .main-content .functionality-section .section-content .card .card-body p {
+  font-weight: 500;
+  vertical-align: bottom;
+  color: #f9f9f9;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Eliminar la animación de escalado que causa problemas */
+main .main-content .functionality-section .section-content .card:hover:hover, 
+main .main-content .functionality-section .section-content .card:hover:focus, 
+main .main-content .functionality-section .section-content .card:hover:active, 
+main .main-content .functionality-section .section-content .card:focus:hover, 
+main .main-content .functionality-section .section-content .card:focus:focus, 
+main .main-content .functionality-section .section-content .card:focus:active {
+  -webkit-animation: none !important;
+  animation: none !important;
+  -webkit-transform: none !important;
+  transform: none !important;
+}
+
+/* Mantener el cambio de color pero sin escalado */
+main .main-content .functionality-section .section-content .card:hover, 
+main .main-content .functionality-section .section-content .card:focus {
+  display: flex !important;
+  vertical-align: middle;
+  box-shadow: 0 2px 8px rgba(168, 0, 31, 0.2);
+  text-decoration: none;
+  background: none;
+  transition: box-shadow 0.3s ease;
+}
