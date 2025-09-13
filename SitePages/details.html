@@ -1,44 +1,21 @@
 
 <html>
   <head>
-    <title>Detalles del Paciente - Centro Pedagógico y Terapéutico Despertar</title>
+    <title>Administración</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="../SiteAssets/css/vendors/bootstrap.min.css"/>
     <link rel="stylesheet" href="../SiteAssets/css/vendors/line-awesome.min.css"/>
     <link rel="stylesheet" href="../SiteAssets/css/pages/layout.css"/>
-    <link rel="stylesheet" href="../SiteAssets/css/pages/dashboard.css"/>
     <link rel="icon" href="../SiteAssets/images/despertar.jpg"/>
     <script src="../SiteAssets/js/vendors/jquery.min.js"></script>
     <script src="../SiteAssets/js/vendors/bootstrap.bundle.min.js"></script>
     <script src="../SiteAssets/js/global.js"></script>
-    <style>
-      .patient-avatar {
-        max-width: 120px !important;
-        max-height: 120px !important;
-        width: 120px !important;
-        height: 120px !important;
-        object-fit: cover;
-        border: 3px solid #a8001f;
-        display: block;
-        margin: 10px auto;
-      }
-      
-      .mini-card .card-header {
-        padding: 15px;
-        background-color: #f8f9fa;
-        border-bottom: 1px solid #dee2e6;
-      }
-      
-      .patients-details-card-wrapper .mini-card {
-        height: auto;
-        margin-top: 0;
-      }
-    </style>
+    <link rel="stylesheet" href="../SiteAssets/css/pages/details.css"/>
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg shadow-sm fixed-top"><a class="navbar-brand" href=""><img src="../SiteAssets/images/despertar.jpg" style="height: 40px; width: auto;"/><span>Despertar</span></a>
+      <nav class="navbar navbar-expand-lg shadow-sm fixed-top"><a class="navbar-brand" href="../index.html"><img src="../SiteAssets/images/despertar.jpg" style="height: 40px; width: auto;"/><span>Despertar</span></a>
         <div class="navbar-collapse">
           <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link"><i class="las la-question-circle"></i></a></li>
@@ -70,7 +47,7 @@
             <li class="nav-item">
               <div class="nav-link"><span class="vertical-divider"></span></div>
             </li>
-            <li class="nav-item"><a class="nav-link profile-dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle" src="../SiteAssets/images/person.jpg"/><span class="d">Dr. Ariel Saravia</span></a>
+            <li class="nav-item"><a class="nav-link profile-dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle" src="../SiteAssets/images/person.jpg"/><span class="d">Ariel Saravia</span></a>
               <div class="dropdown">
                 <div class="dropdown-menu shadow-lg profile-dropdown-menu" aria-labelledby="profile-dropdown"><a class="dropdown-item" href="settings.html"><i class="las la-user mr-2"></i>perfil</a><a class="dropdown-item" href="settings.html"><i class="las la-cog mr-2"></i>ajustes</a></div>
               </div>
@@ -81,7 +58,7 @@
     </header>
     <main>
       <div class="side-nav">
-        <ul class="list-group list-group-flush"><a class="list-group-item" href="dashboard.html" data-toggle="tooltip" data-placement="bottom" title="Dashboard"><i class="las la-shapes la-lw"></i><span>dashboard</span></a><a class="list-group-item active" href="patients.html" data-toggle="tooltip" data-placement="bottom" title="Pacientes"><i class="las la-user-injured la-lw"></i><span>pacientes</span></a><a class="list-group-item" href="specialists.html" data-toggle="tooltip" data-placement="bottom" title="Especialistas"><i class="las la-clinic-medical la-lw"></i><span>especialistas</span></a><a class="list-group-item" href="procurement.html" data-toggle="tooltip" data-placement="bottom" title="Adquisiciones"><i class="las la-shopping-cart la-lw"></i><span>adquisiciones</span></a><a class="list-group-item" href="notifications.html" data-toggle="tooltip" data-placement="bottom" title="Notificaciones"><i class="las la-sms la-lw"></i><span>notificaciones</span></a><a class="list-group-item" href="settings.html" data-toggle="tooltip" data-placement="bottom" title="Ajustes"><i class="las la-cogs la-lw"></i><span>ajustes</span></a></ul>
+        <ul class="list-group list-group-flush"><a class="list-group-item" href="../index.html" data-toggle="tooltip" data-placement="bottom" title="Dashboard"><i class="las la-shapes la-lw"></i><span>dashboard</span></a><a class="list-group-item" href="patients.html" data-toggle="tooltip" data-placement="bottom" title="Pacientes"><i class="las la-user-injured la-lw"></i><span>pacientes</span></a><a class="list-group-item" href="specialists.html" data-toggle="tooltip" data-placement="bottom" title="Especialistas"><i class="las la-clinic-medical la-lw"></i><span>especialistas</span></a><a class="list-group-item" href="procurement.html" data-toggle="tooltip" data-placement="bottom" title="Adquisiciones"><i class="las la-shopping-cart la-lw"></i><span>adquisiciones</span></a><a class="list-group-item" href="notifications.html" data-toggle="tooltip" data-placement="bottom" title="Notificaciones"><i class="las la-sms la-lw"></i><span>notificaciones</span></a><a class="list-group-item" href="settings.html" data-toggle="tooltip" data-placement="bottom" title="Ajustes"><i class="las la-cogs la-lw"></i><span>ajustes</span></a></ul>
       </div>
       <div class="main-content">
         <div class="container-fluid">
@@ -95,14 +72,7 @@
               </nav>
             </div>
             <div class="col-md-4">
-              <div class="btn-group" role="group">
-                <a href="patients.html" class="btn btn-outline-secondary">
-                  <i class="las la-arrow-left"></i> Regresar
-                </a>
-                <button class="btn btn-dark-red-f-gr">
-                  <i class="las la-edit"></i> Editar paciente
-                </button>
-              </div>
+              <button class="btn btn-dark-red-f-gr"><i class="las la-edit"></i>editar paciente</button>
             </div>
           </div>
           <div class="section patient-details-section">
@@ -114,13 +84,11 @@
                       <div class="row">
                         <div class="col-md-4">
                           <div class="mini-card text-center">
-                            <div class="card-header">
-                              <img class="rounded-circle patient-avatar" src="../SiteAssets/images/people.svg" loading="lazy" style="width: 120px; height: 120px; object-fit: cover; margin: 10px auto;"/>
-                            </div>
+                            <div class="card-header"><img class="rounded-circle" src="https://placebeard.it/640x360" loading="lazy"/></div>
                             <div class="card-body">
-                              <h4 id="patient-name">Juan Pérez</h4><small class="text-muted" id="patient-email">juanperez@abc.com</small>
+                              <h4>Juan Pérez</h4><small class="text-muted">juanperez@abc.com</small>
                               <h5>edad</h5>
-                              <p id="patient-age">26</p>
+                              <p>26</p>
                             </div>
                             <div class="card-footer">
                               <button class="btn btn-dark-red-f"><i class="las la-sms"></i>enviar mensaje</button>
@@ -320,7 +288,7 @@
                   </div>
                   <div class="card-footer">
                     <div class="float-left">
-                      <p><i class="las la-user"></i>Maestro de enseñanza especial Garcia Jose</p>
+                      <p><i class="las la-user"></i>dr. garcía</p>
                     </div>
                     <div class="float-right">
                       <p>04, may, 2020</p>
@@ -340,13 +308,13 @@
                             <button class="btn btn-sm btn-dark-red-f"><i class="las la-trash"></i></button>
                             <button class="btn btn-sm btn-dark-red-f"><i class="las la-download"></i></button>
                           </div>
-                        </div></a><a class="list-group-item" href="#"><i class="las la-file-excel"></i>recetas_medicamentos.csv
+                        </div></a><a class="list-group-item" href="#"><i class="las la-file-excel"></i>recetas_dentales.csv
                         <div class="float-right"><small class="text-muted">3.5mb</small>
                           <div class="action-buttons no-display">
                             <button class="btn btn-sm btn-dark-red-f"><i class="las la-trash"></i></button>
                             <button class="btn btn-sm btn-dark-red-f"><i class="las la-download"></i></button>
                           </div>
-                        </div></a><a class="list-group-item" href="#"><i class="las la-file-pdf"></i>diagnostico dr chapatin.pdf
+                        </div></a><a class="list-group-item" href="#"><i class="las la-file-pdf"></i>rayos_x.pdf
                         <div class="float-right"><small class="text-muted">2.1mb</small>
                           <div class="action-buttons no-display">
                             <button class="btn btn-sm btn-dark-red-f"><i class="las la-trash"></i></button>
@@ -381,22 +349,22 @@
                       </div>
                       <div class="carousel-item"><img class="d-block" src="../SiteAssets/images/undraw_medicine_b1ol.svg" alt="..."/>
                         <div class="carousel-caption d-md-block">
-                          <p>acceso a <a href="specialists.html">especialistas<i class="las la-external-link-alt"></i></a></p>
+                          <p>acceso a<a href="specialists.html">especialistas<i class="las la-external-link-alt"></i></a></p>
                         </div>
                       </div>
                       <div class="carousel-item"><img class="d-block" src="../SiteAssets/images/undraw_receipt_ecdd.svg" alt="..."/>
                         <div class="carousel-caption d-md-block">
-                          <p>proceso simple de <a href="procurement.html">adquisiciones<i class="las la-external-link-alt"></i></a></p>
+                          <p>proceso simple de<a href="procurement.html">adquisiciones<i class="las la-external-link-alt"></i></a></p>
                         </div>
                       </div>
                       <div class="carousel-item"><img class="d-block" src="../SiteAssets/images/undraw_new_notifications_fhvw.svg" alt="..."/>
                         <div class="carousel-caption d-md-block">
-                          <p>centro de <a href="notifications.html">notificaciones<i class="las la-external-link-alt"></i></a> completo</p>
+                          <p>centro de<a href="notifications.html">notificaciones<i class="las la-external-link-alt"></i></a> completo</p>
                         </div>
                       </div>
                       <div class="carousel-item"><img class="d-block" src="../SiteAssets/images/undraw_Preferences_re_49in.svg" alt="..."/>
                         <div class="carousel-caption d-md-block">
-                          <p>centro de <a href="settings.html">ajustes<i class="las la-external-link-alt"></i></a> minimalista</p>
+                          <p>centro de<a href="settings.html">ajustes<i class="las la-external-link-alt"></i></a> minimalista</p>
                         </div>
                       </div>
                     </div><a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev"><i class="las la-chevron-circle-left"></i><span class="sr-only">Anterior</span></a><a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next"><i class="las la-chevron-circle-right"></i><span class="sr-only">Siguiente</span></a>
@@ -411,132 +379,5 @@
         </footer>
       </div>
     </main>
-    
-    <script>
-        // Función para cargar los datos del paciente
-        function cargarDatosPaciente() {
-            // Obtener el ID del paciente desde los parámetros de la URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const pacienteId = urlParams.get('id');
-            
-            if (!pacienteId) {
-                console.error('No se proporcionó ID de paciente');
-                window.location.href = 'patients.html';
-                return;
-            }
-            
-            // Obtener los pacientes del localStorage
-            const pacientes = JSON.parse(localStorage.getItem('pacientes') || '[]');
-            const paciente = pacientes.find(p => p.id == pacienteId);
-            
-            if (!paciente) {
-                console.error('Paciente no encontrado');
-                window.location.href = 'patients.html';
-                return;
-            }
-            
-            // Actualizar el breadcrumb
-            const breadcrumbItem = document.querySelector('.breadcrumb-item.active');
-            if (breadcrumbItem) {
-                breadcrumbItem.textContent = (paciente.nombres || '') + ' ' + (paciente.apellidos || '');
-            }
-
-            // Actualizar el nombre en la tarjeta
-            const nombreHeader = document.getElementById('patient-name');
-            if (nombreHeader) {
-                nombreHeader.textContent = (paciente.nombres || '') + ' ' + (paciente.apellidos || '');
-            }
-
-            // Actualizar el email (si no existe, mostrar documento o información de contacto)
-            const emailElement = document.getElementById('patient-email');
-            if (emailElement) {
-                emailElement.textContent = paciente.documento || 'Documento: No especificado';
-            }
-
-            // Actualizar la edad
-            const edadElement = document.getElementById('patient-age');
-            if (edadElement) {
-                edadElement.textContent = (paciente.edad || 'No especificada') + (paciente.edad ? ' años' : '');
-            }
-            if (edadElement) {
-                edadElement.textContent = paciente.edad || 'No especificada';
-            }
-            
-            // Actualizar los campos del formulario
-            const campos = {
-                'género': paciente.sexo === 'M' ? 'Masculino' : paciente.sexo === 'F' ? 'Femenino' : paciente.sexo || 'No especificado',
-                'fecha de nacimiento': paciente.fechaNacimiento || 'No especificada',
-                'número de teléfono': paciente.telefonoMadre || paciente.telefonoPadre || paciente.telefono || 'No especificado',
-                'dirección': paciente.domicilio || paciente.direccion || 'No especificada',
-                'ciudad': 'No especificada', // Este campo no está en el formulario original
-                'código postal': 'No especificado', // Este campo no está en el formulario original
-                'estado de miembro': 'Activo', // Siempre activo para pacientes del centro
-                'fecha de registro': paciente.fechaRegistro ? new Date(paciente.fechaRegistro).toLocaleDateString() : 'No especificada'
-            };
-            
-            // Actualizar cada campo
-            Object.keys(campos).forEach(label => {
-                const labelElement = Array.from(document.querySelectorAll('label')).find(el => el.textContent.toLowerCase() === label);
-                if (labelElement) {
-                    const input = labelElement.nextElementSibling;
-                    if (input && input.tagName === 'INPUT') {
-                        input.value = campos[label];
-                    }
-                }
-            });
-            
-            // Actualizar información adicional si existe
-            if (paciente.diagnostico || paciente.diagnosticoPrincipal) {
-                // Buscar un lugar donde mostrar el diagnóstico
-                const container = document.querySelector('.patients-details-card-wrapper .card-body .row');
-                if (container) {
-                    const diagnosticoDiv = document.createElement('div');
-                    diagnosticoDiv.className = 'col-md-12 mt-3';
-                    diagnosticoDiv.innerHTML = `
-                        <div class="form-group">
-                            <label>Diagnóstico</label>
-                            <textarea class="form-control" readonly rows="2">${paciente.diagnostico || paciente.diagnosticoPrincipal}</textarea>
-                        </div>
-                    `;
-                    container.appendChild(diagnosticoDiv);
-                }
-            }
-            
-            if (paciente.motivoConsulta) {
-                // Agregar motivo de consulta
-                const container = document.querySelector('.patients-details-card-wrapper .card-body .row');
-                if (container) {
-                    const motivoDiv = document.createElement('div');
-                    motivoDiv.className = 'col-md-12 mt-3';
-                    motivoDiv.innerHTML = `
-                        <div class="form-group">
-                            <label>Motivo de Consulta</label>
-                            <textarea class="form-control" readonly rows="3">${paciente.motivoConsulta}</textarea>
-                        </div>
-                    `;
-                    container.appendChild(motivoDiv);
-                }
-            }
-            
-            if (paciente.observaciones) {
-                // Agregar observaciones
-                const container = document.querySelector('.patients-details-card-wrapper .card-body .row');
-                if (container) {
-                    const obsDiv = document.createElement('div');
-                    obsDiv.className = 'col-md-12 mt-3';
-                    obsDiv.innerHTML = `
-                        <div class="form-group">
-                            <label>Observaciones</label>
-                            <textarea class="form-control" readonly rows="3">${paciente.observaciones}</textarea>
-                        </div>
-                    `;
-                    container.appendChild(obsDiv);
-                }
-            }
-        }
-        
-        // Cargar los datos cuando la página esté lista
-        document.addEventListener('DOMContentLoaded', cargarDatosPaciente);
-    </script>
   </body>
 </html>

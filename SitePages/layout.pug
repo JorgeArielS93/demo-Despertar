@@ -1,102 +1,110 @@
--var assetsDirectory = '../SiteAssets'
+block config
+  //- Directorio de assets por defecto para las páginas en SitePages/
+  - var assetsDirectory = '../SiteAssets'
+  //- Nivel de la página (0 para raíz, 1 para subdirectorios). Por defecto es 1.
+  - var page_level = 1
+
+//- Se calculan los prefijos de ruta en base al nivel de la página
+- var root_prefix = page_level === 0 ? '' : '../'
+- var page_prefix = page_level === 0 ? 'SitePages/' : ''
 
 html
-	head
-		title Administración
-		meta(charset="UTF-8")
-		meta(name='viewport' content='width=device-width, initial-scale=1.0')
-		link(rel='stylesheet' href=assetsDirectory + '/css/vendors/bootstrap.min.css')
-		link(rel='stylesheet' href=assetsDirectory + '/css/vendors/line-awesome.min.css')
-		link(rel='stylesheet' href=assetsDirectory + '/css/pages/layout.css')
-		link(rel='icon' href=assetsDirectory + '/images/despertar.jpg')
-		script(src=assetsDirectory + '/js/vendors/jquery.min.js')
-		script(src=assetsDirectory + '/js/vendors/bootstrap.bundle.min.js')
-		script(src=assetsDirectory + '/js/global.js')
-		block links
-	body
-		header
-			nav.navbar.navbar-expand-lg.shadow-sm.fixed-top
-				a.navbar-brand(href='')
-					img(src=assetsDirectory + '/images/despertar.jpg', style='height: 40px; width: auto;')
-					span Despertar
-				.navbar-collapse
-					ul.navbar-nav
-						li.nav-item
-							a.nav-link
-								i.las.la-question-circle
-						li.nav-item.dropdown.dropleft
-							a.nav-link.notification-dropdown(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-								span.badge.badge-pill.badge-primary(style='float:right;margin-bottom:-10px;')
-								i.las.la-bell
-							.dropdown-menu.notification-dropdown-menu.shadow-lg(aria-labelledby='notification-dropdown')
-								.dropdown-title
-									a(href='notifications.html') notificaciones
-										span.ml-2.notifications-count (3)
-									a(href='').float-right marcar todo como leído
-								.dropdown-body
-									ul.list-unstyled
-										li.media
-											a(href='').notification-card
-												img.mr-3(src=assetsDirectory + '/images/inbox.svg', alt='...')
-												.media-body
-													h6.mt-0.mb-1 Herramientas de colaboración disponibles
-													p Nuevas herramientas para mejorar el trabajo en equipo.
-													small.text-muted 21.03.2020, 13.02
-										li.media
-											a(href='').notification-card
-												img.mr-3(src=assetsDirectory + '/images/inbox.svg', alt='...')
-												.media-body
-													h6.mt-0.mb-1 Usa el nuevo lanzador de aplicaciones
-													p Accede a tus aplicaciones de forma más rápida y sencilla.
-													small.text-muted 21.03.2020, 13.02
-										li.media
-											a(href='').notification-card
-												img.mr-3(src=assetsDirectory + '/images/inbox.svg', alt='...')
-												.media-body
-													h6.mt-0.mb-1 El nuevo dashboard está disponible
-													p Explora las nuevas métricas y visualizaciones.
-													small.text-muted 21.03.2020, 13.02
-								.dropdown-footer.text-center
-									a(href='notifications.html') ver más
-						li.nav-item
-							.nav-link
-								span.vertical-divider
-						li.nav-item
-							a.nav-link.profile-dropdown(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-								img.rounded-circle(src=assetsDirectory + '/images/person.jpg')
-								span.d Ariel Saravia
-							.dropdown
-								.dropdown-menu.shadow-lg.profile-dropdown-menu(aria-labelledby='profile-dropdown')
-									a.dropdown-item(href='settings.html')
-										i.las.la-user.mr-2
-										| perfil
-									a.dropdown-item(href='settings.html')
-										i.las.la-cog.mr-2
-										| ajustes
-		main
-			.side-nav
-				ul.list-group.list-group-flush
-					a(href='index.html' data-toggle="tooltip" data-placement="bottom" title="Dashboard").list-group-item
-						i.las.la-shapes.la-lw
-						span dashboard
-					a(href='patients.html' data-toggle="tooltip" data-placement="bottom" title="Pacientes").list-group-item
-						i.las.la-user-injured.la-lw
-						span pacientes
-					a(href='specialists.html' data-toggle="tooltip" data-placement="bottom" title="Especialistas").list-group-item
-						i.las.la-clinic-medical.la-lw
-						span especialistas
-					a(href='procurement.html' data-toggle="tooltip" data-placement="bottom" title="Adquisiciones").list-group-item
-						i.las.la-shopping-cart.la-lw
-						span adquisiciones
-					a(href='notifications.html' data-toggle="tooltip" data-placement="bottom" title="Notificaciones").list-group-item
-						i.las.la-sms.la-lw
-						span notificaciones
-					a(href='settings.html' data-toggle="tooltip" data-placement="bottom" title="Ajustes").list-group-item
-						i.las.la-cogs.la-lw
-						span ajustes
-			.main-content
-				.container-fluid
-					block content
-					include components/onboarding-modal
-				footer
-					.page-footer.text-center
+  head
+    title Administración
+    meta(charset="UTF-8")
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href=assetsDirectory + '/css/vendors/bootstrap.min.css')
+    link(rel='stylesheet' href=assetsDirectory + '/css/vendors/line-awesome.min.css')
+    link(rel='stylesheet' href=assetsDirectory + '/css/pages/layout.css')
+    link(rel='icon' href=assetsDirectory + '/images/despertar.jpg')
+    script(src=assetsDirectory + '/js/vendors/jquery.min.js')
+    script(src=assetsDirectory + '/js/vendors/bootstrap.bundle.min.js')
+    script(src=assetsDirectory + '/js/global.js')
+    block links
+  body
+    header
+      nav.navbar.navbar-expand-lg.shadow-sm.fixed-top
+        a.navbar-brand(href=root_prefix + 'index.html')
+          img(src=assetsDirectory + '/images/despertar.jpg', style='height: 40px; width: auto;')
+          span Despertar
+        .navbar-collapse
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link
+                i.las.la-question-circle
+            li.nav-item.dropdown.dropleft
+              a.nav-link.notification-dropdown(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                span.badge.badge-pill.badge-primary(style='float:right;margin-bottom:-10px;')
+                i.las.la-bell
+              .dropdown-menu.notification-dropdown-menu.shadow-lg(aria-labelledby='notification-dropdown')
+                .dropdown-title
+                  a(href=page_prefix + 'notifications.html') notificaciones
+                    span.ml-2.notifications-count (3)
+                  a(href='').float-right marcar todo como leído
+                .dropdown-body
+                  ul.list-unstyled
+                    li.media
+                      a(href='').notification-card
+                        img.mr-3(src=assetsDirectory + '/images/inbox.svg', alt='...')
+                        .media-body
+                          h6.mt-0.mb-1 Herramientas de colaboración disponibles
+                          p Nuevas herramientas para mejorar el trabajo en equipo.
+                          small.text-muted 21.03.2020, 13.02
+                    li.media
+                      a(href='').notification-card
+                        img.mr-3(src=assetsDirectory + '/images/inbox.svg', alt='...')
+                        .media-body
+                          h6.mt-0.mb-1 Usa el nuevo lanzador de aplicaciones
+                          p Accede a tus aplicaciones de forma más rápida y sencilla.
+                          small.text-muted 21.03.2020, 13.02
+                    li.media
+                      a(href='').notification-card
+                        img.mr-3(src=assetsDirectory + '/images/inbox.svg', alt='...')
+                        .media-body
+                          h6.mt-0.mb-1 El nuevo dashboard está disponible
+                          p Explora las nuevas métricas y visualizaciones.
+                          small.text-muted 21.03.2020, 13.02
+                .dropdown-footer.text-center
+                  a(href=page_prefix + 'notifications.html') ver más
+            li.nav-item
+              .nav-link
+                span.vertical-divider
+            li.nav-item
+              a.nav-link.profile-dropdown(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                img.rounded-circle(src=assetsDirectory + '/images/person.jpg')
+                span.d Ariel Saravia
+              .dropdown
+                .dropdown-menu.shadow-lg.profile-dropdown-menu(aria-labelledby='profile-dropdown')
+                  a.dropdown-item(href=page_prefix + 'settings.html')
+                    i.las.la-user.mr-2
+                    | perfil
+                  a.dropdown-item(href=page_prefix + 'settings.html')
+                    i.las.la-cog.mr-2
+                    | ajustes
+    main
+      .side-nav
+        ul.list-group.list-group-flush
+          a(href=root_prefix + 'index.html' data-toggle="tooltip" data-placement="bottom" title="Dashboard").list-group-item
+            i.las.la-shapes.la-lw
+            span dashboard
+          a(href=page_prefix + 'patients.html' data-toggle="tooltip" data-placement="bottom" title="Pacientes").list-group-item
+            i.las.la-user-injured.la-lw
+            span pacientes
+          a(href=page_prefix + 'specialists.html' data-toggle="tooltip" data-placement="bottom" title="Especialistas").list-group-item
+            i.las.la-clinic-medical.la-lw
+            span especialistas
+          a(href=page_prefix + 'procurement.html' data-toggle="tooltip" data-placement="bottom" title="Adquisiciones").list-group-item
+            i.las.la-shopping-cart.la-lw
+            span adquisiciones
+          a(href=page_prefix + 'notifications.html' data-toggle="tooltip" data-placement="bottom" title="Notificaciones").list-group-item
+            i.las.la-sms.la-lw
+            span notificaciones
+          a(href=page_prefix + 'settings.html' data-toggle="tooltip" data-placement="bottom" title="Ajustes").list-group-item
+            i.las.la-cogs.la-lw
+            span ajustes
+      .main-content
+        .container-fluid
+          block content
+          include components/onboarding-modal
+        footer
+          .page-footer.text-center

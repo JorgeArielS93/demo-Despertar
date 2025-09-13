@@ -1,0 +1,337 @@
+extends SitePages/layout
+
+block config
+  //- Sobrescribir el directorio de assets para la página raíz.
+  - var assetsDirectory = 'SiteAssets'
+  //- Definir el nivel de la página como 0 (raíz) para corregir las rutas relativas.
+  - var page_level = 0
+
+append links
+  link(rel='stylesheet' href=assetsDirectory + '/css/pages/dashboard.css')
+  link(rel='stylesheet', href=assetsDirectory + '/css/vendors/Chart.min.css')
+  script(src=assetsDirectory + '/js/vendors/Chart.bundle.min.js')
+  script(src=assetsDirectory + '/js/dashboard.js')
+
+block content
+  .section
+    .row
+      .col-md-6
+        h5.page-title
+  .section.welcome-section
+    .section-content
+      .card-deck
+        .card.welcome-content-card
+          .card-body
+            .row
+              .col-md-6.welcome-text-wrapper.align-self-center
+                h5 Hola, Dr. Ariel Saravia
+                p Bienvenido a tu dashboard
+              .col-md-6.welcome-img-wrapper
+                img(src=assetsDirectory + '/images/hello.svg')
+        .card.app-stats-card
+          .card-body
+            .row.text-center
+              .col-md-4
+                i.las.la-user-injured.la-3x.align-self-center
+                p total pacientes
+                h4
+                  a(href='') 2,301
+              .col-md-4
+                i.las.la-user-md.la-3x.align-self-center
+                p total doctores/as
+                h4
+                  a(href='') 401
+              .col-md-4
+                i.las.la-clinic-medical.la-3x.align-self-center
+                p total clinicas
+                h4
+                  a(href='') 21
+  .section.functionality-section
+    .section-content
+      .card-deck
+        a(href='').card.text-center
+          .card-title
+            .icon-wrapper
+              i.las.la-clinic-medical
+          .card-body
+            p Añadir Clinicas
+        a(href='').card.text-center
+          .card-title
+            .icon-wrapper
+              i.las.la-user-md
+          .card-body
+            p Agregar Especialista
+        a(href='').card.text-center
+          .card-title
+            .icon-wrapper
+              i.las.la-user-plus
+          .card-body
+            p Agregar Usuarios
+        a(href='').card.text-center
+          .card-title
+            .icon-wrapper
+              i.las.la-user-lock
+          .card-body
+            p Agregar Admin
+        a(href='').card.text-center
+          .card-title
+            .icon-wrapper
+              i.las.la-plus-circle
+          .card-body
+            p Agregar Equipos
+  .section.card-summaries
+    .section-content
+      .card-deck
+        .card
+          .card-header
+            h5 Actividades Recientes
+          .card-body
+            canvas#recent-activity-chart
+        .card
+          .card-header
+            h5 Total de Reservas
+          .card-body
+            canvas#bookings-chart
+        .card
+          .card-header
+            h5 Resumenes de Enfermedades 
+          .card-body
+            canvas#diseases-chart
+      .card-deck
+        .card
+          .card-header
+            h5 Mejores Tratamientos
+          .card-body
+            ol(type='1')
+              li Consultas
+              li Escalado
+              li -
+              li Blanqueamiento
+              li Transplantes
+              li Cesarias
+              li Rayos X
+          .card-footer
+            a(href='').view-more
+              | mas..
+              i.las.la-angle-right
+        .card.total-counts-summary
+          .card-header
+            h5 Totales
+          .card-body
+            .row.text-center.text-capitalize
+              .col-md-6
+                i.las.la-users.la-2x.mb-1
+                h4.mb-1 100
+                p total usuarios
+              .col-md-6
+                i.las.la-user-md.la-2x.mb-1
+                h4.mb-1 12
+                p total doctores
+              .col-md-6
+                i.las.la-user-injured.la-2x.mb-1
+                h4.mb-1 3210
+                p total pacientes
+              .col-md-6
+                i.las.la-hospital.la-2x.mb-1
+                h4.mb-1 40
+                p total clinicas
+          .card-footer
+            a(href='').view-more
+              | mas..
+              i.las.la-angle-right
+        .card
+          .card-header
+            h5 Pacientes Recientes
+          .card-body
+            table.table.table-hover.table-responsive-md.table-borderless
+              tbody
+                tr
+                  td
+                    img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
+                  td
+                    p Juana Perez
+                    small.text-muted Dentista
+                  td
+                    p.text-muted male
+                  td
+                    button.btn.btn-sm
+                      i.las.la-ellipsis-h
+                tr
+                  td
+                    img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
+                  td
+                    p Juana Perez
+                    small.text-muted Dentista
+                  td
+                    p.text-muted male
+                  td
+                    button.btn.btn-sm
+                      i.las.la-ellipsis-h
+                tr
+                  td
+                    img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
+                  td
+                    p Juana Perez
+                    small.text-muted Dentista
+                  td
+                    p.text-muted femenina
+                  td
+                    button.btn.btn-sm
+                      i.las.la-ellipsis-h
+          .card-footer
+            a(href='').view-more
+              | mas..
+              i.las.la-angle-right
+      .card-deck
+        .card
+          .card-header
+            h5 Lista de Doctores
+          .card-body
+            table.table.table-borderless.table-hover.table-responsive-md
+              tbody
+                tr
+                  td
+                    img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
+                  td
+                    p john doe
+                    small.text-muted dentista
+                  td
+                    p.text-muted male
+                  td.text-right
+                    p +271289178
+                  td.text-right
+                    button.btn.btn-dark-red-f.btn-sm cita
+                  td
+                    button.btn.btn-sm
+                      i.las.la-ellipsis-h
+                tr
+                  td
+                    img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
+                  td
+                    p Pepito Juarez
+                    small.text-muted terapeuta
+                  td
+                    p.text-muted masculino
+                  td.text-right
+                    p +271289178
+                  td.text-right
+                    button.btn.btn-dark-red-f.btn-sm cita
+                  td
+                    button.btn.btn-sm
+                      i.las.la-ellipsis-h
+                tr
+                  td
+                    img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
+                  td
+                    p Maria Gomez
+                    small.text-muted fonoaudiologa 
+                  td
+                    p.text-muted male
+                  td.text-right
+                    p +271289178
+                  td.text-right
+                    button.btn.btn-dark-red-f.btn-sm cita
+                  td
+                    button.btn.btn-sm
+                      i.las.la-ellipsis-h
+                tr
+                  td
+                    img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
+                  td
+                    p john Lopez
+                    small.text-muted psicologo
+                  td
+                    p.text-muted male
+                  td.text-right
+                    p +271289178
+                  td.text-right
+                    button.btn.btn-dark-red-f.btn-sm cita
+                  td
+                    button.btn.btn-sm
+                      i.las.la-ellipsis-h
+          .card-footer
+            a(href='').view-more
+              | mas..
+              i.las.la-angle-right
+        .card
+          .card-header
+            h5 Citas Pendientes
+          .card-body
+            table.table.table-borderless.table-hover.table-responsive-md
+              tbody
+                tr
+                  td
+                    img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
+                  td
+                    p john doe
+                    small.text-muted dentista
+                  td
+                    p.text-muted male
+                  td.text-right
+                    p 24y
+                  td.text-right
+                    button.btn
+                      i.las.la-check-circle
+                    button.btn
+                      i.las.la-times-circle
+                  td
+                    button.btn.btn-sm
+                      i.las.la-ellipsis-h
+                tr
+                  td
+                    img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
+                  td
+                    p maria Gomez
+                    small.text-muted fonoaudiologa
+                  td
+                    p.text-muted male
+                  td.text-right
+                    p 24y
+                  td.text-right
+                    button.btn
+                      i.las.la-check-circle
+                    button.btn
+                      i.las.la-times-circle
+                  td
+                    button.btn.btn-sm
+                      i.las.la-ellipsis-h
+                tr
+                  td
+                    img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
+                  td
+                    p Pepito Juarez
+                    small.text-muted terapeuta 
+                  td
+                    p.text-muted male
+                  td.text-right
+                    p 24y
+                  td.text-right
+                    button.btn
+                      i.las.la-check-circle
+                    button.btn
+                      i.las.la-times-circle
+                  td
+                    button.btn.btn-sm
+                      i.las.la-ellipsis-h
+                tr
+                  td
+                    img.rounded-circle(src=assetsDirectory + '/images/man.svg' loading='lazy')
+                  td
+                    p john Lopez
+                    small.text-muted psicologo
+                  td
+                    p.text-muted male
+                  td.text-right
+                    p 24y
+                  td.text-right
+                    button.btn
+                      i.las.la-check-circle
+                    button.btn
+                      i.las.la-times-circle
+                  td
+                    button.btn.btn-sm
+                      i.las.la-ellipsis-h
+          .card-footer
+            a(href='').view-more
+              | mas..
+              i.las.la-angle-right
