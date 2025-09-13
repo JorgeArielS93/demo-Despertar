@@ -16,14 +16,14 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg shadow-sm fixed-top">
-            <a class="navbar-brand" href="dashboard.html">
+            <a class="navbar-brand" href="index.html">
                 <img src="../SiteAssets/images/despertar.jpg" style="height: 40px; width: auto;"/>
                 <span>Despertar</span>
             </a>
             <div class="navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard.html">
+                        <a class="nav-link" href="index.html">
                             <i class="las la-arrow-left"></i> Volver al Dashboard
                         </a>
                     </li>
@@ -34,8 +34,7 @@
 
     <main>
         <div class="side-nav">
-            <ul class="list-group list-group-flush">
-                <a class="list-group-item" href="dashboard.html" data-toggle="tooltip" data-placement="bottom" title="Dashboard">
+            <ul class="list-group list-group-flush"><a class="list-group-item" href="index.html" data-toggle="tooltip" data-placement="bottom" title="Dashboard">
                     <i class="las la-shapes la-lw"></i><span>dashboard</span>
                 </a>
                 <a class="list-group-item active" href="patients.html" data-toggle="tooltip" data-placement="bottom" title="Pacientes">
@@ -613,7 +612,7 @@
                 alert('Entrevista inicial guardada exitosamente.\nPaciente: ' + entrevistaData.nombreApellido);
                 
                 // Redirigir al dashboard
-                window.location.href = 'dashboard.html';
+                window.location.href = 'index.html';
             });
         });
     </script>
